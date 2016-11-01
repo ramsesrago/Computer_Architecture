@@ -1,0 +1,18 @@
+module top (clk, pc, res)
+
+input 	clk;
+input 	pc;
+output	res;
+
+initial 
+begin
+	pc  = 0;
+	res = 0;
+	clk = 0;
+end
+
+always @(posedge clk)
+pc <= pc + 1;
+
+
+endmodule

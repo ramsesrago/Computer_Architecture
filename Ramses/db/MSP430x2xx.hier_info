@@ -1,0 +1,14 @@
+|MSP430x2xx
+a => a.IN1
+b => b.IN1
+res <= hadd:myHalfAdder.port3
+cout <= hadd:myHalfAdder.port2
+
+
+|MSP430x2xx|hadd:myHalfAdder
+a => Add0.IN1
+b => Add0.IN2
+cout <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+s <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,30 @@
+module alu_16_bits (Z, C, V, N, PC_en, opcode, dst, src, MCLK, res);
+
+// Inputs 
+input 			Z; 		//Zero
+input 			C;			//Carry
+input 			V;			//Overflow
+input 			N; 		//Negative
+input 			PC_en;	//Program Counter enable
+input [15: 0]	Dst;		//A, Dest
+input [15: 0]  Sc;		//B, Src
+input 		   MCLK; 	//Clock
+input [ 3: 0]	Opcode;	//Operation code on ALU
+
+// Outputs
+output [15: 0]	res;
+
+// Signals
+// Registers
+reg [15: 0] Res_reg;				//Result register
+reg [ 2: 0] OpAddr_mode_reg;	//Source/Destination Operand Addressing Modes
+//Double-Operand (Format I) instructions
+reg [ 3: 0] Opcode_reg;			//Operation code register
+reg [ 1: 0] As_reg;				//As reg used in instruction format 
+reg			Ad_reg;				//Ad reg used in instruction format
+
+//Behavior
+//Operand Addressing Modes
+
+
+endmodule
