@@ -1,4 +1,4 @@
-module alu_16_bits (Z, C, V, N, PC_en, opcode, dst, src, MCLK, res);
+module alu (Z, C, V, N, PC_en, Opcode, Dst, Src, MCLK, res);
 
 // Inputs 
 input 			Z; 		//Zero
@@ -44,34 +44,33 @@ always @(Opcode_reg)
 begin
 	case (Opcode_reg)
 	//Single operand (Format II) instructions
-	4b'0001:
+	4'b0001:
 		begin
 			case(Opcode_singop_reg)
 			5'b00000:	
 				begin
 					if (BW_reg == 1'b0)
-							//RRC
+						Res_reg = Dst;	//RRC
 					else	//RRC.B
-					
+						Res_reg = Dst;
 				end
-				Res_reg = Dst;
 			5'b00001:	//SWPB
 				Res_reg = Dst;
 			5'b00010:	//RRA
 				begin	
 					if (BW_reg == 1'b0)
-							//RRA
+						Res_reg = Dst;	//RRA
 					else	//RRA.B
-					
+						Res_reg = Dst;
 				end	
 			5'b00011:	//SXT
 				Res_reg = Dst;
 			5'b00100:	
 				begin	
 					if (BW_reg == 1'b0)
-							//PUSH
+						Res_reg = Dst;	//PUSH
 					else	//PUSH.B
-					
+						Res_reg = Dst;
 				end
 			5'b00101:	//CALL
 				Res_reg = Dst;
@@ -82,56 +81,56 @@ begin
 			endcase
 		end
 	//Jumps instructions
-	4b'0010:
+	4'b0010:
 		begin
 			case(Opcode_jumpop_reg)
-				2b'00:		//JNE/JNZ
+				2'b00:		//JNE/JNZ
 					Res_reg = Dst;
-				2b'01:		//JEQ/JZ
+				2'b01:		//JEQ/JZ
 					Res_reg = Dst;
-				2b'10:		//JNC
+				2'b10:		//JNC
 					Res_reg = Dst;
-				2b'11:		//JC
+				2'b11:		//JC
 					Res_reg = Dst;
 			endcase
 		end
 	//Jumps instructions
-	4b'0011:
+	4'b0011:
 		begin
 			case(Opcode_jumpop_reg)
-				2b'00:		//JN
+				2'b00:		//JN
 					Res_reg = Dst;
-				2b'01:		//JGE
+				2'b01:		//JGE
 					Res_reg = Dst;
-				2b'10:		//JL
+				2'b10:		//JL
 					Res_reg = Dst;
-				2b'11:		//JMP
+				2'b11:		//JMP
 					Res_reg = Dst;
 			endcase
 		end
-	4b'0100:				//MOV
+	4'b0100:				//MOV
 		Dst_reg = Src_reg;
-	4b'0101:				//ADD
+	4'b0101:				//ADD
 		Res_reg = Dst;
-	4b'0110:				//ADDC
+	4'b0110:				//ADDC
 		Res_reg = Dst; 
-	4b'0111:				//SUBC
+	4'b0111:				//SUBC
 		Res_reg = Dst;
-	4b'1000:				//SUB
+	4'b1000:				//SUB
 		Res_reg = Dst;
-	4b'1001:				//CMP
+	4'b1001:				//CMP
 		Res_reg = Dst;
-	4b'1010:				//DADD
+	4'b1010:				//DADD
 		Res_reg = Dst;
-	4b'1011:				//BIT
+	4'b1011:				//BIT
 		Res_reg = Dst;
-	4b'1100:				//BIC
+	4'b1100:				//BIC
 		Res_reg = Dst;
-	4b'1101:				//BIS
+	4'b1101:				//BIS
 		Res_reg = Dst;
-	4b'1110:				//XOR
+	4'b1110:				//XOR
 		Res_reg = Dst;
-	4b'1111:				//AND
+	4'b1111:				//AND
 		Res_reg = Dst;
 	
 	endcase
