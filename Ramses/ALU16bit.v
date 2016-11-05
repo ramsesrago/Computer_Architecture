@@ -33,6 +33,11 @@ module ALU16bit(A, B, result, sel, flags);
 	always @(A or B or sel) 
 	begin
 		case(sel)
+		/* 
+		TODO: Add case for all carry operations
+				Probably match 4 bit used in operation code
+				from instruction_ctrl_unit.v
+		*/
 			 // ADD, ADD.B
 			 4'b0000: result = A + B;
 			 // SUB, SUB.B
