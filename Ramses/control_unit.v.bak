@@ -1,0 +1,11 @@
+module control_unit (
+				instruction, inst_load, clk,
+				en_pc_2, read_reg, bank_register_rw,
+				src_reg, dst_reg, wr_en, 
+				op_code
+);
+
+// Inputs 
+
+
+end module
