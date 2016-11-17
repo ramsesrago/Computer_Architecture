@@ -21,4 +21,32 @@ output	[ 3: 0]	src_reg;				//Search reg in bank register
 output	[ 3: 0]	dst_reg; 			//Search reg in bank register
 output	[ 4: 0]	op_code;				//Alu selection Mux
 
+/*
+State Machine logic planning
+
+State 0
+	Read PC address, PC register (bank_register.v) 
+	MAR <- (PC), READ 
+	The address of the instruction to be fetched is stored 
+	in the program counter. Since [15..0] instruction receive 
+	values from the address register, the first step is accomplished 
+	by copying the contents of PC to AR. 
+
+State 1
+	Increment PC
+	Read instruction and add it to MBR 
+
+State 2 
+	Divide Instruction register from MBR, and process information
+	(Start decoding)
+
+State 3 
+	For single Operand Operations 
+
+State 6 
+	For double operand operations
+	
+**Jumps done in fetch
+
+*/
 end module
