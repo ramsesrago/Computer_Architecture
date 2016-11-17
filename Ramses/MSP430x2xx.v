@@ -11,12 +11,12 @@ output   s;
 // Registers
 
 //Behavior
-hadd halfadder (
+/*hadd halfadder (
 a, 
 b, 
 cout, 
 s
-);
+);*/
 
 
 endmodule
