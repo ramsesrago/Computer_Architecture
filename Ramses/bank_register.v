@@ -25,7 +25,12 @@ assign	b = regmem [des_reg];	//Always output b to ALU w/des_reg
 always @(posedge clk) 
 	begin
 		if (wr_en) 
+		// control_unit.v to set what is the wr_reg to modify
 			regmem[wr_reg] <= wr_data;
 	end
 
+	/*
+	TODO: Need to add a MUX before wr_data, to choose between 
+			PC, Status Register, General Registers
+	*/
 end module
