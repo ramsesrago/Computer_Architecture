@@ -16,11 +16,11 @@ output	[15: 0] 	a;
 output 	[15: 0]	b;
 
 // Registers
-reg 		[15: 0]	regmem	[ 0: 15]	//Memory registers
+reg 		[15: 0]	regmem	[ 0: 15];	//Memory registers
 
 //Behavior
 assign 	a = regmem [src_reg];	//Always output a to ALU w/src_reg
-assign	b = regmem [des_reg];	//Always output b to ALU w/des_reg
+assign	b = regmem [dst_reg];	//Always output b to ALU w/dst_reg
 
 always @(posedge clk) 
 	begin
@@ -33,4 +33,4 @@ always @(posedge clk)
 	TODO: Need to add a MUX before wr_data, to choose between 
 			PC, Status Register, General Registers
 	*/
-end module
+endmodule

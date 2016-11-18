@@ -132,17 +132,17 @@ begin
 	Registers, using the Memory Address BUS
 	and the Memory Data BUS. 
 	*/
-	4'b0100:				//MOV
-	4'b0101:				//ADD
-	4'b0110:				//ADDC
-	4'b0111:				//SUBC
-	4'b1000:				//SUB
-	4'b1001:				//CMP
-	4'b1010:				//DADD
-	4'b1011:				//BIT
-	4'b1100:				//BIC
-	4'b1101:				//BIS
-	4'b1110:				//XOR
+	4'b0100,				//MOV
+	4'b0101,				//ADD
+	4'b0110,				//ADDC
+	4'b0111,				//SUBC
+	4'b1000,				//SUB
+	4'b1001,				//CMP
+	4'b1010,				//DADD
+	4'b1011,				//BIT
+	4'b1100,				//BIC
+	4'b1101,				//BIS
+	4'b1110,				//XOR
 	4'b1111:				//AND
 		begin
 			assign	Opcode_doubop_reg = instr_or_reg[15:12];
@@ -151,6 +151,12 @@ begin
 			assign	BW_reg  				= instr_or_reg[    6];
 			assign	As_reg  				= instr_or_reg[ 5: 4];
 			assign	Dst_reg 				= instr_or_reg[ 3: 0];
+			
+			/*
+			TODO: With these register assigned, follow up with 
+			the FSM to retrieve Src and Dest values and send 
+			them to alu to perform required operation
+			*/
 		end
 	/*
 	End of Double-Operand (Format I) Instructions

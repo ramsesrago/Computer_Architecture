@@ -64,12 +64,12 @@ module ALU16bit(A, B, result, sel, flags);
 					result = ~A & result;
 				end
 			// BIS, BIS.B
-			5'd01000: 
+			5'b01000: 
 				begin
 					result = A | result;
 				end
 			// CMP, CMP.B
-			5'd01001: 
+			5'b01001: 
 				begin
 					result = A - B;
 					if(A > B) N = 0;
@@ -80,7 +80,7 @@ module ALU16bit(A, B, result, sel, flags);
 			end of DOUBLE OPERAND OPERATIONS
 		*/
 			
-			default: result_reg = 16'bxxxx;
+			default: result = 16'bxxxx;
 		endcase
 	end
 	
