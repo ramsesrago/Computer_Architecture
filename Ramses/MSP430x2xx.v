@@ -1,16 +1,21 @@
-module MSP430x2xx(a,b,cout,s);
+module MSP430x2xx(Load_en, Clk, Rst, Flags);
 
 // Inputs
-input		a;
-input 	b;
+input		Load_en;
+input 	Clk;
+input		Rst;
 // Outputs
-output   cout;
-output   s;
+output   [3:0] Flags;
 
 // Signals
 // Registers
+// Behavior
 
-//Behavior
+MSP430x2xx_block_diagram MSP430x2xx ( 
+.Load_en	(Load_en), 
+.Clk		(Clk),
+.Rst		(Rst),
+.Flags	(Flags));
 /*hadd halfadder (
 a, 
 b, 

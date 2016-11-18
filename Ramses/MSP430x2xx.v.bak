@@ -1,18 +1,22 @@
-module top (clk, pc, res)
+module MSP430x2xx(a,b,cout,s);
 
-input 	clk;
-input 	pc;
-output	res;
+// Inputs
+input		a;
+input 	b;
+// Outputs
+output   cout;
+output   s;
 
-initial 
-begin
-	pc  = 0;
-	res = 0;
-	clk = 0;
-end
+// Signals
+// Registers
 
-always @(posedge clk)
-pc <= pc + 1;
+//Behavior
+/*hadd halfadder (
+a, 
+b, 
+cout, 
+s
+);*/
 
 
 endmodule

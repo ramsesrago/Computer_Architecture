@@ -1,5 +1,5 @@
-Analysis & Synthesis report for MSP430x2xx
-Thu Oct 06 18:25:36 2016
+Analysis & Elaboration report for MSP430x2xx
+Fri Nov 18 01:43:23 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -7,16 +7,12 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -40,31 +36,52 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 06 18:25:36 2016       ;
-; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
-; Revision Name                   ; MSP430x2xx                                  ;
-; Top-level Entity Name           ; MSP430x2xx                                  ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 4                                           ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri Nov 18 01:43:23 2016       ;
+; Quartus Prime Version         ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                 ; MSP430x2xx                                  ;
+; Top-level Entity Name         ; MSP430x2xx                                  ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3 ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; f0             ; 0     ; Signed Integer                                                             ;
+; f1             ; 1     ; Signed Integer                                                             ;
+; f2             ; 2     ; Signed Integer                                                             ;
+; f3             ; 3     ; Signed Integer                                                             ;
+; f4             ; 4     ; Signed Integer                                                             ;
+; f5             ; 5     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -151,130 +168,89 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                   ;
-+----------------------------------+-----------------+------------------------+----------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path     ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------+---------+
-; MSP430x2xx.v                     ; yes             ; User Verilog HDL File  ; C:/Verilog Projects/MSP430x2xx.v ;         ;
-; hadd.v                           ; yes             ; User Verilog HDL File  ; C:/Verilog Projects/hadd.v       ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------+---------+
-
-
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimate of Logic utilization (ALMs needed) ; 1       ;
-;                                             ;         ;
-; Combinational ALUT usage for logic          ; 2       ;
-;     -- 7 input functions                    ; 0       ;
-;     -- 6 input functions                    ; 0       ;
-;     -- 5 input functions                    ; 0       ;
-;     -- 4 input functions                    ; 0       ;
-;     -- <=3 input functions                  ; 2       ;
-;                                             ;         ;
-; Dedicated logic registers                   ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 4       ;
-;                                             ;         ;
-; Total DSP Blocks                            ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; a~input ;
-; Maximum fan-out                             ; 2       ;
-; Total fan-out                               ; 10      ;
-; Average fan-out                             ; 1.00    ;
-+---------------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
-; |MSP430x2xx                ; 2 (0)             ; 0 (0)        ; 0                 ; 0          ; 4    ; 0            ; |MSP430x2xx                  ; MSP430x2xx  ; work         ;
-;    |hadd:myHalfAdder|      ; 2 (2)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|hadd:myHalfAdder ; hadd        ; work         ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 2                           ;
-;     normal            ; 2                           ;
-;         2 data inputs ; 2                           ;
-; boundary_port         ; 4                           ;
-;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Oct 06 18:25:16 2016
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSP430x2xx -c MSP430x2xx
+    Info: Processing started: Fri Nov 18 01:43:06 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSP430x2xx -c MSP430x2xx --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file alu16bit_tb.v
+    Info (12023): Found entity 1: ALU16bit_tb File: C:/Computer_Architecture/Ramses/ALU16bit_tb.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu16bit.v
+    Info (12023): Found entity 1: ALU16bit File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_unit File: C:/Computer_Architecture/Ramses/control_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bank_register.v
+    Info (12023): Found entity 1: bank_register File: C:/Computer_Architecture/Ramses/bank_register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_1_bit.v
+    Info (12023): Found entity 1: mux_1_bit File: C:/Computer_Architecture/Ramses/mux_1_bit.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file msp430x2xx.v
-    Info (12023): Found entity 1: MSP430x2xx File: C:/Verilog Projects/MSP430x2xx.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file hadd.v
-    Info (12023): Found entity 1: hadd File: C:/Verilog Projects/hadd.v Line: 1
+    Info (12023): Found entity 1: MSP430x2xx File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file msp430x2xx_block_diagram.bdf
+    Info (12023): Found entity 1: MSP430x2xx_block_diagram
 Info (12127): Elaborating entity "MSP430x2xx" for the top level hierarchy
-Info (12128): Elaborating entity "hadd" for hierarchy "hadd:myHalfAdder" File: C:/Verilog Projects/MSP430x2xx.v Line: 9
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 899 megabytes
-    Info: Processing ended: Thu Oct 06 18:25:36 2016
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:44
+Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 18
+Info (12128): Elaborating entity "ALU16bit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst"
+Warning (10858): Verilog HDL warning at ALU16bit.v(28): object V used but never assigned File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(52): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(55): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 55
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(58): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 58
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(64): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 64
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(69): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 69
+Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(32): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(32): inferring latch(es) for variable "N", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(32): inferring latch(es) for variable "Z", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(32): inferring latch(es) for variable "C", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Warning (10030): Net "V" at ALU16bit.v(28) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 28
+Info (10041): Inferred latch for "C" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "Z" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "N" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[0]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[1]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[2]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[3]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[4]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[5]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[6]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[7]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[8]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[9]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[10]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[11]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[12]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[13]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[14]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (10041): Inferred latch for "result[15]" at ALU16bit.v(32) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 32
+Info (12128): Elaborating entity "bank_register" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2"
+Info (12128): Elaborating entity "control_unit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3"
+Warning (10272): Verilog HDL Case Statement warning at control_unit.v(79): case item expression covers a value already covered by a previous case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 79
+Warning (10272): Verilog HDL Case Statement warning at control_unit.v(80): case item expression covers a value already covered by a previous case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 80
+Warning (10272): Verilog HDL Case Statement warning at control_unit.v(81): case item expression covers a value already covered by a previous case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 81
+Warning (10272): Verilog HDL Case Statement warning at control_unit.v(82): case item expression covers a value already covered by a previous case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 82
+Info (10264): Verilog HDL Case Statement information at control_unit.v(77): all case item expressions in this case statement are onehot File: C:/Computer_Architecture/Ramses/control_unit.v Line: 77
+Info (10264): Verilog HDL Case Statement information at control_unit.v(93): all case item expressions in this case statement are onehot File: C:/Computer_Architecture/Ramses/control_unit.v Line: 93
+Warning (10034): Output port "src_reg" at control_unit.v(20) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 20
+Warning (10034): Output port "wr_reg" at control_unit.v(19) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 19
+Warning (10034): Output port "dst_reg" at control_unit.v(21) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 21
+Warning (10034): Output port "op_code" at control_unit.v(22) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 22
+Warning (10034): Output port "en_pc_2" at control_unit.v(15) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 15
+Warning (10034): Output port "wr_en" at control_unit.v(16) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 16
+Warning (10034): Output port "branch_en" at control_unit.v(17) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 17
+Warning (10034): Output port "pc_inc" at control_unit.v(18) has no driver File: C:/Computer_Architecture/Ramses/control_unit.v Line: 18
+Info (144001): Generated suppressed messages file C:/Computer_Architecture/Ramses/output_files/MSP430x2xx.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 858 megabytes
+    Info: Processing ended: Fri Nov 18 01:43:23 2016
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:36
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Computer_Architecture/Ramses/output_files/MSP430x2xx.map.smsg.
 
 
