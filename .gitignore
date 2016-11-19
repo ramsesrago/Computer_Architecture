@@ -1,1 +1,5 @@
 *.flock
+*.hdb
+*.cdb
+Ramses/db/MSP430x2xx.(0).cnf.hdb
+*.cdb

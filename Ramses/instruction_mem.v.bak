@@ -1,0 +1,26 @@
+module instruction_mem (clk, addr, inst);
+
+// Inputs 
+input 				clk;
+input 	[ 7: 0]	addr;
+
+// Outputs
+output 	[ 7: 0]	inst;
+
+// Wires
+// Registers
+reg 		[ 7: 0]	addr_reg;
+reg 		[15: 0]	Inst_mem		[ 0:255];
+
+// Parameters
+// Behavior
+
+$readmemb ("Imem.data", Imem);
+
+always @(posedge clk)
+	begin
+		addr_reg 	= addr;
+		inst 			= Inst_mem[addr_reg];
+	end
+
+endmodule

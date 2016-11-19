@@ -21,9 +21,9 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 200 160)
+	(rect 16 16 256 192)
 	(text "bank_register" (rect 5 0 59 12)(font "Arial" ))
-	(text "inst" (rect 8 128 20 140)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -67,20 +67,47 @@ agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
-		(pt 184 32)
-		(output)
-		(text "a[15..0]" (rect 0 0 28 12)(font "Arial" ))
-		(text "a[15..0]" (rect 135 27 163 39)(font "Arial" ))
-		(line (pt 184 32)(pt 168 32)(line_width 3))
+		(pt 0 128)
+		(input)
+		(text "pc_inc" (rect 0 0 25 12)(font "Arial" ))
+		(text "pc_inc" (rect 21 123 46 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
 	)
 	(port
-		(pt 184 48)
+		(pt 0 144)
+		(input)
+		(text "pc_data_in[15..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "pc_data_in[15..0]" (rect 21 139 88 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "a[15..0]" (rect 0 0 28 12)(font "Arial" ))
+		(text "a[15..0]" (rect 191 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(port
+		(pt 240 48)
 		(output)
 		(text "b[15..0]" (rect 0 0 28 12)(font "Arial" ))
-		(text "b[15..0]" (rect 135 43 163 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48)(line_width 3))
+		(text "b[15..0]" (rect 191 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "pc_data_out[15..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "pc_data_out[15..0]" (rect 146 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(parameter
+		"pc"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 168 128)(line_width 1))
+		(rectangle (rect 16 16 224 160)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 256 -64 356 16))
 )
