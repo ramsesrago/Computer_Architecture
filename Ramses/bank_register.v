@@ -15,9 +15,9 @@ input 				clk;			//System clock
 input					pc_inc;		//Signal from control_unit.v to update pc
 
 // Outputs
-output	[15: 0] 	a;
-output 	[15: 0]	b;
-output	[15: 0]	pc_data_out;		//To program counter
+output	reg [15: 0] 	a;
+output 	reg [15: 0]	b;
+output	reg [15: 0]	pc_data_out;		//To program counter
 
 // Registers
 reg 		[15: 0]	regmem	[ 0: 15];	//Memory registers
@@ -27,9 +27,12 @@ reg		[15: 0]	regpc;
 parameter pc = 0;
 
 //Behavior
-assign 	a = regmem [src_reg];	//Always output a to ALU w/src_reg
-assign	b = regmem [dst_reg];	//Always output b to ALU w/dst_reg
-assign 	pc_data_out = regmem [pc];
+always @(*)
+begin
+	a = regmem [src_reg];		//Always output a to ALU w/src_reg
+	b = regmem [dst_reg];		//Always output b to ALU w/dst_reg
+	pc_data_out = regmem [pc];	//Always output pc to pc + 2 operation
+end
 
 always @(posedge clk) 
 	begin
