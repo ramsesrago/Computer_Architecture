@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Computer_Architecture/Ramses/simulation/modelsim
+vALU16bit
+Z1 !s110 1479758576
+!i10b 1
+!s100 jTR`L9AhJP1i_3VWJi>4`1
+I8?=N;9R0dId<YYXfCi2Pf3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1479445892
+8C:/Computer_Architecture/Ramses/ALU16bit.v
+FC:/Computer_Architecture/Ramses/ALU16bit.v
+L0 18
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1479758575.000000
+!s107 C:/Computer_Architecture/Ramses/ALU16bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Computer_Architecture/Ramses|C:/Computer_Architecture/Ramses/ALU16bit.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Computer_Architecture/Ramses
+n@a@l@u16bit
+vbank_register
+R1
+!i10b 1
+!s100 nOX[JdGX<DB6EO]LN434m2
+IT=9znoB[C_3fz2Gkk=;MV1
+R2
+R0
+w1479613855
+8C:/Computer_Architecture/Ramses/bank_register.v
+FC:/Computer_Architecture/Ramses/bank_register.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z6 !s108 1479758576.000000
+!s107 C:/Computer_Architecture/Ramses/bank_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Computer_Architecture/Ramses|C:/Computer_Architecture/Ramses/bank_register.v|
+!i113 1
+R4
+R5
+vcontrol_unit
+R1
+!i10b 1
+!s100 WIXTR;OOmbNedN;S1`hfi1
+I1^gYEe1;]H<BfFITcn6[:3
+R2
+R0
+w1479696429
+8C:/Computer_Architecture/Ramses/control_unit.v
+FC:/Computer_Architecture/Ramses/control_unit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R6
+!s107 C:/Computer_Architecture/Ramses/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Computer_Architecture/Ramses|C:/Computer_Architecture/Ramses/control_unit.v|
+!i113 1
+R4
+R5
+vMSP430x2xx
+R1
+!i10b 1
+!s100 eb3OmabN>?_5]h[bDKz^Z1
+IEVlh6iQI]dDRcHZJTOKaE3
+R2
+R0
+w1479454876
+8C:/Computer_Architecture/Ramses/MSP430x2xx.v
+FC:/Computer_Architecture/Ramses/MSP430x2xx.v
+L0 1
+R3
+r1
+!s85 0
+31
+R6
+!s107 C:/Computer_Architecture/Ramses/MSP430x2xx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Computer_Architecture/Ramses|C:/Computer_Architecture/Ramses/MSP430x2xx.v|
+!i113 1
+R4
+R5
+n@m@s@p430x2xx

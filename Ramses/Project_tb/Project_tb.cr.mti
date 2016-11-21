@@ -1,0 +1,57 @@
+C:/Computer_Architecture/Ramses/adderpc.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adderpc.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module adderpc
+
+Top level modules:
+	adderpc
+
+} {} {}} C:/Computer_Architecture/Ramses/mux_1_bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mux_1_bit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mux_1_bit
+
+Top level modules:
+	mux_1_bit
+
+} {} {}} C:/Computer_Architecture/Ramses/mux16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mux16bit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mux16bit
+
+Top level modules:
+	mux16bit
+
+} {} {}} C:/Computer_Architecture/Ramses/control_unit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/control_unit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module control_unit
+
+Top level modules:
+	control_unit
+
+} {} {}} C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ALU16bit
+
+Top level modules:
+	ALU16bit
+
+} {} {}} C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module instruction_mem
+
+Top level modules:
+	instruction_mem
+
+} {} {}} C:/Computer_Architecture/Ramses/MSP430x2xx.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/MSP430x2xx.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module MSP430x2xx
+
+Top level modules:
+	MSP430x2xx
+
+} {} {}} C:/Computer_Architecture/Ramses/adder16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adder16bits.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module adder16bits
+
+Top level modules:
+	adder16bits
+
+} {} {}}

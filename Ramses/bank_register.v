@@ -1,7 +1,7 @@
 module bank_register (
 				src_reg, dst_reg, clk, 
 				wr_reg, wr_data, wr_en, a, b,
-				pc_data_out, pc_inc, pc_data_in
+				pc_data_out, pc_inc, pc_data_in, rst
 );
 
 // Inputs 
@@ -13,19 +13,26 @@ input		[15: 0]	pc_data_in;	//PC value to update
 input 				wr_en;		//Signal to write result on register
 input 				clk;			//System clock
 input					pc_inc;		//Signal from control_unit.v to update pc
+input 				rst;			//Signal to reset all registers
 
 // Outputs
-output	reg [15: 0] 	a;
+output	reg [15: 0] a;
 output 	reg [15: 0]	b;
 output	reg [15: 0]	pc_data_out;		//To program counter
 
 // Registers
 reg 		[15: 0]	regmem	[ 0: 15];	//Memory registers
 reg		[15: 0]	regpc;
+reg					i;
 
 //	Parameters
 parameter pc = 0;
 
+always @(posedge rst)
+begin
+	for (i=0; i<15; i=i+1) 
+		regmem[i] <= 16'b0000000000000000;
+end
 //Behavior
 always @(*)
 begin
