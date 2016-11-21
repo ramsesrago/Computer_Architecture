@@ -2,7 +2,7 @@ module control_unit (
 				instruction, inst_load, clk, rst,
 				en_pc_2, src_reg, wr_reg,
 				dst_reg, wr_en, op_code, branch_en,
-				pc_inc, fsm_state
+				pc_inc, fsm_state, pc_offset
 );
 
 // Inputs 
@@ -21,6 +21,7 @@ output	[ 3: 0]	src_reg;				//Search reg in bank register
 output	[ 3: 0]	dst_reg; 			//Search reg in bank register
 output	[ 4: 0]	op_code;				//Alu selection Mux
 output	[ 4: 0]  fsm_state;			//Sharing fsm current state
+output	[ 9: 0] 	pc_offset;			//Offset to do the jump
 
 //Registers
 reg		[ 3: 0]	_wr_reg;				//Register to write information inner
@@ -28,6 +29,7 @@ reg		[ 3: 0]	_src_reg;			//Search reg in bank register inner
 reg		[ 3: 0]	_dst_reg; 			//Search reg in bank register inner
 reg		[ 4: 0]	_op_code;			//Alu selection Mux inner
 reg		[ 2: 0]  _fsm_state;			//Sharing fsm current state
+reg		[ 9: 0]	pc_offset;
 reg		[ 4: 0]  fsm_state;			//Sharing fsm current state
  
 

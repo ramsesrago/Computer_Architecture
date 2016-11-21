@@ -115,6 +115,13 @@ agreement for further details.
 		(text "fsm_state[4..0]" (rect 141 155 203 167)(font "Arial" ))
 		(line (pt 224 160)(pt 208 160)(line_width 3))
 	)
+	(port
+		(pt 224 176)
+		(output)
+		(text "pc_offset[9..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "pc_offset[9..0]" (rect 144 171 203 183)(font "Arial" ))
+		(line (pt 224 176)(pt 208 176)(line_width 3))
+	)
 	(parameter
 		"f0"
 		"0"
