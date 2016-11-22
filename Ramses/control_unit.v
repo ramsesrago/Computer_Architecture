@@ -30,6 +30,7 @@ reg		[ 3: 0]	_dst_reg; 			//Search reg in bank register inner
 reg		[ 4: 0]	_op_code;			//Alu selection Mux inner
 reg		[ 2: 0]  _fsm_state;			//Sharing fsm current state
 reg		[15: 0]	_instruction_reg;	//Instruction comming from PC
+reg		[ 3: 0]	_inst_doub_flags;	//Flags indicating addressing mode
 reg		[ 9: 0]	pc_offset;
 reg		[ 4: 0]  fsm_state;			//Sharing fsm current state
 reg		[ 4: 0]	op_code;				//Alu selection Mux
@@ -109,9 +110,21 @@ always @(_fsm_state)
 					fsm_state = 4'b0001;
 					_instruction_reg = instruction;
 				end
-			f2: fsm_state = 4'b0010;
-			f3: fsm_state = 4'b0100;
-			f4: fsm_state = 4'b1000;
+			f2: 
+				begin
+					fsm_state = 4'b0010;
+					_instruction_reg = instruction;
+				end
+			f3: 
+				begin
+					fsm_state = 4'b0100;
+					_instruction_reg = instruction;
+				end
+			f4:
+				begin
+					fsm_state = 4'b1000;
+					_instruction_reg = instruction;
+				end
 			f5: fsm_state = 4'b1001;
 			default:
 				 fsm_state = 4'b0000;
@@ -148,8 +161,16 @@ always @(_instruction_reg)
 			4'h3:				//	Jump-Op
 				op_code		= 5'hx;
 			//	Double-Op
-			4'h4: op_code		= 5'b00000;		//MOV 
-			4'h5: op_code		= 5'b00001;		//ADD and ADDB
+			4'h4: 
+				begin
+					op_code				= 5'b00000;							//MOV 
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+				end
+			4'h5: 
+				begin
+					op_code				= 5'b00001;						//ADD and ADDB
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+				end
 			4'h6: op_code		= 5'b00010;		//ADDC
 			4'h7: op_code		= 5'b00011;		//SUB
 			4'h8: op_code		= 5'b00100;		//SUBC
@@ -161,5 +182,36 @@ always @(_instruction_reg)
 			4'hE: op_code		= 5'b01010;		//XOR
 			4'hF: op_code		= 5'b01011;		//AND
 		endcase
+		
+		case (_inst_doub_flags)
+			4'b0100,					//Register addressing mode
+			4'b0000:
+				begin
+					src_reg	= _instruction_reg[11: 8];
+					dst_reg	= _instruction_reg[ 3: 0];
+				end
+			4'b1001,					//Symbolic and Absolute addessing mode
+			4'b1101:
+				begin 
+					src_reg	= _instruction_reg[11: 8];
+					dst_reg	= _instruction_reg[ 3: 0];
+				end
+			4'bxx10:					//Indirect addressing mode
+				begin
+					src_reg	= _instruction_reg[11: 8];
+					dst_reg	= _instruction_reg[ 3: 0];
+				end
+			4'bxx11:					//Indirect auto increase, Inmediate mode
+				begin
+					src_reg	= _instruction_reg[11: 8];
+					dst_reg	= _instruction_reg[ 3: 0];
+				end
+			default:
+				begin
+					src_reg	= 4'h0;
+					dst_reg	= 4'b0;
+				end
+		endcase
 	end
+
 endmodule

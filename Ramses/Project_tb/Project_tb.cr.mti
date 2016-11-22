@@ -1,11 +1,4 @@
-C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none {C:\Computer_Architecture\Ramses\ALU16bit.v}
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module ALU16bit
-
-Top level modules:
-	ALU16bit
-
-} {} {}} C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
+C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module instruction_mem
 
@@ -97,5 +90,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 
 Top level modules:
 	adderpc
+
+} {} {}} C:/Computer_Architecture/Ramses/control_unit_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/control_unit_tb.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module control_unit_tb
+
+Top level modules:
+	control_unit_tb
 
 } {} {}}

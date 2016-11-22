@@ -52,7 +52,7 @@ always @(A or B or sel)
 				end
 			5'b01000: result = ~A & result;		// BIC, BIC.B
 			5'b01001: result = A | result;		// BIS, BIS.B
-			5'B01010: result = A ^ B;				// XOR, XOR.B
+			5'b01010: result = A ^ B;				// XOR, XOR.B
 			5'b01011: result = A & B;				// AND, AND.B
 			5'b01100: result = 16'b0;
 		/*
