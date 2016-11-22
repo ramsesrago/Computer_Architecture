@@ -29,8 +29,17 @@ reg		[ 3: 0]	_src_reg;			//Search reg in bank register inner
 reg		[ 3: 0]	_dst_reg; 			//Search reg in bank register inner
 reg		[ 4: 0]	_op_code;			//Alu selection Mux inner
 reg		[ 2: 0]  _fsm_state;			//Sharing fsm current state
+reg		[15: 0]	_instruction_reg;	//Instruction comming from PC
 reg		[ 9: 0]	pc_offset;
 reg		[ 4: 0]  fsm_state;			//Sharing fsm current state
+reg		[ 4: 0]	op_code;				//Alu selection Mux
+reg		[ 3: 0]	src_reg;				//Search reg in bank register
+reg		[ 3: 0]	dst_reg; 			//Search reg in bank register
+reg		[ 3: 0]	wr_reg;				//Register to write information
+reg					en_pc_2; 			//Goes to Mux to add 2 to PC 
+reg					wr_en;				//Tells Bank register when to write
+reg					branch_en;			//Used for jump in Mux_2
+reg					pc_inc;				//Load new data on PC
  
 
 //Parameters
@@ -82,8 +91,24 @@ end
 always @(_fsm_state)
 	begin
 		case (_fsm_state)
-			f0: fsm_state = 4'b0000;
-			f1: fsm_state = 4'b0001;
+			f0:
+				begin
+					fsm_state 	= 4'b0000;
+					en_pc_2		= 1'b0;
+					wr_en 		= 1'b0;
+					branch_en	= 1'b0;
+					pc_inc		= 1'b0;
+					wr_reg		= 4'd0;
+					src_reg		= 4'd0;
+					dst_reg		= 4'd0;
+					op_code		= 5'd0;
+					pc_offset	= 10'd0;
+				end
+			f1: 
+				begin
+					fsm_state = 4'b0001;
+					_instruction_reg = instruction;
+				end
 			f2: fsm_state = 4'b0010;
 			f3: fsm_state = 4'b0100;
 			f4: fsm_state = 4'b1000;
@@ -112,5 +137,29 @@ always @(posedge clk or posedge rst)
 	end
 //	end of STATE_MACHINE_BEHAVIOR
 
-
+// INSTRUCTION - OPCODE CODIFICATION
+always @(_instruction_reg)
+	begin
+		_op_code = _instruction_reg[15:12];
+		case (_op_code)
+			4'h1:				//	Special-Op
+				op_code 		= 5'hx;
+			4'h2,
+			4'h3:				//	Jump-Op
+				op_code		= 5'hx;
+			//	Double-Op
+			4'h4: op_code		= 5'b00000;		//MOV 
+			4'h5: op_code		= 5'b00001;		//ADD and ADDB
+			4'h6: op_code		= 5'b00010;		//ADDC
+			4'h7: op_code		= 5'b00011;		//SUB
+			4'h8: op_code		= 5'b00100;		//SUBC
+			4'h9: op_code		= 5'b00101;		//CMP
+			4'hA: op_code		= 5'b00110;		//DADD
+			4'hB: op_code		= 5'b00111;		//BIT
+			4'hC: op_code		= 5'b01000;		//BIC
+			4'hD: op_code		= 5'b01001;		//BIS
+			4'hE: op_code		= 5'b01010;		//XOR
+			4'hF: op_code		= 5'b01011;		//AND
+		endcase
+	end
 endmodule

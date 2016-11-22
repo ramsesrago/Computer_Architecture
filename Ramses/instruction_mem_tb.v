@@ -22,6 +22,11 @@ end
 always
 begin
 	#5 clk_tb 	= !clk_tb;
+end
+
+always@(negedge clk_tb)
+begin
 	addr_tb		= addr_tb + 1;
 end
+
 endmodule

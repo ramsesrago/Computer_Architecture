@@ -31,10 +31,23 @@ wire	[ 9: 0] 	pc_offset_tb;			//Offset to do the jump
 	
 initial
 begin
-	instruction_tb	= 15'd0;
+	instruction_tb	= 16'b0100_1100_0100_1101;
 	rst_tb 			=  1'b0;
 	inst_load_tb	= 	1'b0;
 	clk_tb			=  1'b0;
+	#10 instruction_tb = 16'b0101_1000_0100_1000;
+	#10 instruction_tb = 16'b0110_1101_0100_1000;
+	#10 instruction_tb = 16'b0111_1101_0100_1101;
+	#10 instruction_tb = 16'b1000_1101_0100_1010;
+	#10 instruction_tb = 16'b1001_1001_0100_1101;
+	#10 instruction_tb = 16'b1010_1100_0100_1100;
+	#10 instruction_tb = 16'b1011_1110_0100_1001;
+	#10 instruction_tb = 16'b1100_1111_0100_1101;
+	#10 instruction_tb = 16'b1101_1001_0100_1100;
+	#10 instruction_tb = 16'b1110_1110_0100_1111;
+	#10 instruction_tb = 16'b1111_1000_0100_1001;
+
+	
 	#45;
 	rst_tb			= 	1'b1;
 	#5;
