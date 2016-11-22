@@ -72,16 +72,22 @@ State 5
 **Jumps done in fetch
 */
 
+initial
+begin
+	_fsm_state = f0;
+end
+
 
 //	STATE_MACHINE_BEHAVIOR
 always @(_fsm_state)
 	begin
 		case (_fsm_state)
 			f0: fsm_state = 4'b0000;
-			f0: fsm_state = 4'b0001;
-			f0: fsm_state = 4'b0010;
-			f0: fsm_state = 4'b0100;
-			f0: fsm_state = 4'b1000;
+			f1: fsm_state = 4'b0001;
+			f2: fsm_state = 4'b0010;
+			f3: fsm_state = 4'b0100;
+			f4: fsm_state = 4'b1000;
+			f5: fsm_state = 4'b1001;
 			default:
 				 fsm_state = 4'b0000;
 		endcase
@@ -100,6 +106,7 @@ always @(posedge clk or posedge rst)
 				f1: _fsm_state = f2;
 				f2: _fsm_state = f3;
 				f3: _fsm_state = f4;
+				f4: _fsm_state = f5;
 				f5: _fsm_state = f0;
 			endcase
 	end

@@ -1,0 +1,25 @@
+`timescale 1 ns/1 ns
+
+module control_unit_tb();
+
+// Wires and variables to connect to DUT
+
+// Inputs 
+reg 	[15: 0] 	instruction;		//Instruction comming from PC
+reg 				inst_load; 			//Used for testing purposes
+reg 				clk;					//System clk
+reg				rst;					//Reset complete program
+
+// Outputs
+wire				en_pc_2; 			//Goes to Mux to add 2 to PC 
+wire				wr_en;				//Tells Bank register when to write
+wire				branch_en;			//Used for jump in Mux_2
+wire				pc_inc;				//Load new data on PC
+wire	[ 3: 0]	wr_reg;				//Register to write information
+wire	[ 3: 0]	src_reg;				//Search reg in bank register
+wire	[ 3: 0]	dst_reg; 			//Search reg in bank register
+wire	[ 4: 0]	op_code;				//Alu selection Mux
+wire	[ 4: 0]  fsm_state;			//Sharing fsm current state
+wire	[ 9: 0] 	pc_offset;			//Offset to do the jump
+
+endmodule
