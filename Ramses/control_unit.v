@@ -84,7 +84,14 @@ State 5
 
 initial
 begin
-	_fsm_state = f0;
+	_fsm_state 	= f5;
+	fsm_state 	= 5'b00000;
+	en_pc_2		= 1'b0;
+	wr_en 		= 1'b0;
+	branch_en	= 1'b0;
+	pc_inc		= 1'b0;
+	op_code		= 5'd0;
+	pc_offset	= 10'd0;
 end
 
 
@@ -94,40 +101,61 @@ always @(_fsm_state)
 		case (_fsm_state)
 			f0:
 				begin
-					fsm_state 	= 4'b0000;
+					fsm_state 	= 5'b00000;
 					en_pc_2		= 1'b0;
 					wr_en 		= 1'b0;
 					branch_en	= 1'b0;
 					pc_inc		= 1'b0;
-					wr_reg		= 4'd0;
-					src_reg		= 4'd0;
-					dst_reg		= 4'd0;
 					op_code		= 5'd0;
+					src_reg 		= 4'd0;
+					dst_reg 		= 4'd0;
+					wr_reg		= 4'd0;
 					pc_offset	= 10'd0;
 				end
 			f1: 
 				begin
-					fsm_state = 4'b0001;
+					/*
+						Use of information in instruction to bank_register.v
+						PC will be added and written to the value regmem[pc];
+					*/
+					fsm_state = 5'b00001;
 					_instruction_reg = instruction;
+					en_pc_2		= 1'b1;					//Sum enabler for PC
+					pc_inc		= 1'b1;					//Input in bank_register.v
+					branch_en	= 1'b0;					//In MUX select the input on the PC
 				end
 			f2: 
 				begin
-					fsm_state = 4'b0010;
+					/*
+						Bank register clk operation
+						Gather 16 bits of information in the register
+						Operation in ALU is done
+						wr_reg [3:0] will be set to write on it
+					*/
+					fsm_state 	= 5'b00010;
+					en_pc_2		= 1'b0;					//Turn off prev signals
+					pc_inc		= 1'b0;					//branch_en could be set at this point for jmp ops
+					
 					
 				end
 			f3: 
 				begin
-					fsm_state = 4'b0100;
+					fsm_state 	= 5'b00100;
+					wr_en 		= 1'b1;
 					
 				end
 			f4:
 				begin
-					fsm_state = 4'b1000;
+					fsm_state = 5'b1000;
+					wr_en 		= 1'b0;
 					
 				end
-			f5: fsm_state = 4'b1001;
+			f5: 
+				begin
+					fsm_state = 5'b10000;
+				end
 			default:
-				 fsm_state = 4'b0000;
+				 fsm_state = 5'b0000;
 		endcase
 	end
 
@@ -165,25 +193,101 @@ always @(_instruction_reg)
 				begin
 					op_code				= 5'b00000;							//MOV 
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
 				end
 			4'h5: 
 				begin
 					op_code				= 5'b00001;						//ADD and ADDB
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
 				end
-			4'h6: op_code		= 5'b00010;		//ADDC
-			4'h7: op_code		= 5'b00011;		//SUB
-			4'h8: op_code		= 5'b00100;		//SUBC
-			4'h9: op_code		= 5'b00101;		//CMP
-			4'hA: op_code		= 5'b00110;		//DADD
-			4'hB: op_code		= 5'b00111;		//BIT
-			4'hC: op_code		= 5'b01000;		//BIC
-			4'hD: op_code		= 5'b01001;		//BIS
-			4'hE: op_code		= 5'b01010;		//XOR
-			4'hF: op_code		= 5'b01011;		//AND
+			4'h6: 
+				begin
+					op_code			= 5'b00010;		//ADDC
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'h7: 
+				begin
+					op_code				= 5'b00011;		//SUB
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'h8: 
+				begin
+					op_code				= 5'b00100;		//SUBC
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'h9: 
+				begin
+					op_code				= 5'b00101;		//CMP
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hA: 
+				begin
+					op_code				= 5'b00110;		//DADD
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hB: 
+				begin
+					op_code				= 5'b00111;		//BIT
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hC: 
+				begin
+					op_code				= 5'b01000;		//BIC
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hD: 
+				begin
+					op_code				= 5'b01001;		//BIS
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hE: 
+				begin
+					op_code				= 5'b01010;		//XOR
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
+			4'hF: 
+				begin
+					op_code				= 5'b01011;		//AND
+					_inst_doub_flags	= _instruction_reg[ 7: 4];
+					wr_reg				= _instruction_reg[ 3: 0];
+					src_reg				= _instruction_reg[11: 8];
+					dst_reg				= _instruction_reg[ 3: 0];
+				end
 		endcase
 		
-		case (_inst_doub_flags)
+		/*case (_inst_doub_flags)
 			4'b0100,					//Register addressing mode
 			4'b0000:
 				begin
@@ -211,7 +315,8 @@ always @(_instruction_reg)
 					src_reg	= 4'h0;
 					dst_reg	= 4'b0;
 				end
-		endcase
+		endcase*/
 	end
+
 
 endmodule

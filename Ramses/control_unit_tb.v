@@ -27,31 +27,26 @@ wire	[ 9: 0] 	pc_offset_tb;			//Offset to do the jump
 											.clk(clk_tb), .rst(rst_tb), .en_pc_2(en_pc_2_tb),
 											.branch_en(branch_en_tb), .pc_inc(pc_inc_tb), .wr_reg(wr_reg_tb),
 											.src_reg(src_reg_tb), .dst_reg(dst_reg_tb), .op_code(op_code_tb),
-											.fsm_state(fsm_state_tb), .pc_offset(pc_offset_tb));
+											.fsm_state(fsm_state_tb), .pc_offset(pc_offset_tb), .wr_en(wr_en_tb));
 	
 initial
 begin
 	instruction_tb	= 16'b0100_1100_0100_1101;
 	rst_tb 			=  1'b0;
 	inst_load_tb	= 	1'b0;
-	clk_tb			=  1'b0;
-	#10 instruction_tb = 16'b0101_1000_0100_1000;
-	#10 instruction_tb = 16'b0110_1101_0100_1000;
-	#10 instruction_tb = 16'b0111_1101_0100_1101;
-	#10 instruction_tb = 16'b1000_1101_0100_1010;
-	#10 instruction_tb = 16'b1001_1001_0100_1101;
-	#10 instruction_tb = 16'b1010_1100_0100_1100;
-	#10 instruction_tb = 16'b1011_1110_0100_1001;
-	#10 instruction_tb = 16'b1100_1111_0100_1101;
-	#10 instruction_tb = 16'b1101_1001_0100_1100;
-	#10 instruction_tb = 16'b1110_1110_0100_1111;
-	#10 instruction_tb = 16'b1111_1000_0100_1001;
+	clk_tb			=  1'b1;
+	#60 instruction_tb = 16'b0101_1010_0100_1000;
+	#60 instruction_tb = 16'b0110_1101_0100_1010;
+	#60 instruction_tb = 16'b0111_1111_0100_1101;
+	#60 instruction_tb = 16'b1000_1001_0100_1010;
+	#60 instruction_tb = 16'b1001_1001_0100_1101;
+	#60 instruction_tb = 16'b1010_1100_0100_1100;
+	#60 instruction_tb = 16'b1011_1110_0100_1001;
+	#60 instruction_tb = 16'b1100_1111_0100_1101;
+	#60 instruction_tb = 16'b1101_1001_0100_1100;
+	#60 instruction_tb = 16'b1110_1110_0100_1111;
+	#60 instruction_tb = 16'b1111_1000_0100_1001;
 
-	
-	#45;
-	rst_tb			= 	1'b1;
-	#5;
-	rst_tb			=  1'b0;
 	
 end
 
