@@ -1,4 +1,11 @@
-C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
+C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ALU16bit
+
+Top level modules:
+	ALU16bit
+
+} {} {}} C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module instruction_mem
 
@@ -26,24 +33,24 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	instruction_mem_tb
 
-} {} {}} C:/Computer_Architecture/Ramses/ALU16bit_tb.v {2 {vlog -work work -stats=none {C:\Computer_Architecture\Ramses\ALU16bit_tb.v}
+} {} {}} C:/Computer_Architecture/Ramses/ALU16bit_tb.v {2 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module ALU16bit_tb
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(23): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(23): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(25): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(25): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(27): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(29): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(29): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(33): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(33): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
-** Warning: C:\Computer_Architecture\Ramses\ALU16bit_tb.v(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Computer_Architecture/Ramses/ALU16bit_tb.v(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 
 
 Top level modules:
@@ -70,13 +77,6 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	bank_register
 
-} {} {}} C:/Computer_Architecture/Ramses/adderpc_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adderpc_tb.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module adderpc_tb
-
-Top level modules:
-	adderpc_tb
-
 } {} {}} C:/Computer_Architecture/Ramses/adder16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adder16bits.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module adder16bits
@@ -91,7 +91,7 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	adderpc
 
-} {} {}} C:/Computer_Architecture/Ramses/control_unit_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/control_unit_tb.v
+} {} {}} C:/Computer_Architecture/Ramses/control_unit_tb.v {1 {vlog -work work -stats=none {C:\Computer_Architecture\Ramses\control_unit_tb.v}
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module control_unit_tb
 

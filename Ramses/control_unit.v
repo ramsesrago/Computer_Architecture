@@ -113,17 +113,17 @@ always @(_fsm_state)
 			f2: 
 				begin
 					fsm_state = 4'b0010;
-					_instruction_reg = instruction;
+					
 				end
 			f3: 
 				begin
 					fsm_state = 4'b0100;
-					_instruction_reg = instruction;
+					
 				end
 			f4:
 				begin
 					fsm_state = 4'b1000;
-					_instruction_reg = instruction;
+					
 				end
 			f5: fsm_state = 4'b1001;
 			default:

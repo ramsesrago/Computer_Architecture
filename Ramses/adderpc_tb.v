@@ -13,14 +13,22 @@ module adderpc_tb();
 initial
 	begin
 		a_tb = 15'd4;
-		en_tb = 1'b0;
+		en_tb = 1'b1;
 		
-		#10 en_tb = 1'b1;
-		#10 en_tb = 1'b0;
-		#10 en_tb = 1'b1;
-		#10 en_tb = 1'b0;
+		#10 a_tb = 15'd6;
+		#10 a_tb = 15'd8;
+		#10 a_tb = 15'd10;
+		#10 a_tb = 15'd12;
+		#10 a_tb = 15'd14;
+		#10 a_tb = 15'd16;
+		#10 a_tb = 15'd18;
+
 
 	end
 
+always
+	begin
+		#5 en_tb = !en_tb;
+	end
 
 endmodule 
