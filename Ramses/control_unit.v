@@ -49,7 +49,6 @@ parameter f1 = 1;
 parameter f2 = 2;
 parameter f3 = 3;
 parameter f4 = 4;
-parameter f5 = 5;
 
 /*
 State Machine logic planning
@@ -84,7 +83,7 @@ State 5
 
 initial
 begin
-	_fsm_state 	= f5;
+	_fsm_state 	= f4;
 	fsm_state 	= 5'b00000;
 	en_pc_2		= 1'b0;
 	wr_en 		= 1'b0;
@@ -141,7 +140,7 @@ always @(_fsm_state)
 			f3: 
 				begin
 					fsm_state 	= 5'b00100;
-					wr_en 		= 1'b1;
+					wr_en 		= 1'b1;					//In order to save value into the register
 					
 				end
 			f4:
@@ -149,10 +148,6 @@ always @(_fsm_state)
 					fsm_state = 5'b1000;
 					wr_en 		= 1'b0;
 					
-				end
-			f5: 
-				begin
-					fsm_state = 5'b10000;
 				end
 			default:
 				 fsm_state = 5'b0000;
@@ -172,8 +167,7 @@ always @(posedge clk or posedge rst)
 				f1: _fsm_state = f2;
 				f2: _fsm_state = f3;
 				f3: _fsm_state = f4;
-				f4: _fsm_state = f5;
-				f5: _fsm_state = f0;
+				f4: _fsm_state = f0;
 			endcase
 	end
 //	end of STATE_MACHINE_BEHAVIOR

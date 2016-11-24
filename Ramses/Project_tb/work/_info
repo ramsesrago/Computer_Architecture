@@ -131,13 +131,13 @@ R4
 !i113 1
 R5
 vcontrol_unit
-!s110 1479890793
+!s110 1479956583
 !i10b 1
-!s100 Uh8aU]<jPTOC5JbD2Y6HI1
-IQ7b7A:<bW5Uh<BDekl;c>3
+!s100 0e:heW:ocDR<XK?lkVl=m2
+I9jEfK[no?4=cXQ^TLSDPT0
 R1
 R2
-w1479890613
+w1479956574
 8C:/Computer_Architecture/Ramses/control_unit.v
 FC:/Computer_Architecture/Ramses/control_unit.v
 L0 1
@@ -145,7 +145,7 @@ R3
 r1
 !s85 0
 31
-!s108 1479890793.000000
+!s108 1479956583.000000
 !s107 C:/Computer_Architecture/Ramses/control_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/control_unit.v|
 !i113 1
@@ -231,6 +231,46 @@ R7
 !i113 1
 R5
 n@m@s@p430x2xx
+vmult_by_2
+!s110 1479956712
+!i10b 1
+!s100 mDlTXngmA^]d@_Z<S12HM0
+IYl9@`2nSW@_R_4l8Kioab3
+R1
+R2
+w1479956695
+8C:/Computer_Architecture/Ramses/mult_by_2.v
+FC:/Computer_Architecture/Ramses/mult_by_2.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1479956712.000000
+!s107 C:/Computer_Architecture/Ramses/mult_by_2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mult_by_2.v|
+!i113 1
+R5
+vmult_by_2_tb
+!s110 1479956540
+!i10b 1
+!s100 2nWbjz5baG;M<3Ob^F6oY1
+IaY9gdVn<efadSoigU;ZWY2
+R1
+R2
+w1479956500
+8C:/Computer_Architecture/Ramses/mult_by_2_tb.v
+FC:/Computer_Architecture/Ramses/mult_by_2_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1479956540.000000
+!s107 C:/Computer_Architecture/Ramses/mult_by_2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mult_by_2_tb.v|
+!i113 1
+R5
 vmux16bit
 R6
 !i10b 1
