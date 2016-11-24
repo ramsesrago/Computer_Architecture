@@ -23,36 +23,30 @@ output	reg [15: 0]	pc_data_out;		//To program counter
 // Registers
 reg 		[15: 0]	regmem	[ 0: 15];	//Memory registers
 reg		[15: 0]	regpc;
-reg					i;
+reg		[ 3: 0]	i;
 
 //	Parameters
 parameter pc = 0;
 
-always @(posedge rst)
-begin
-	for (i=0; i<15; i=i+1) 
-		regmem[i] <= 16'b0000000000000000;
-end
 //Behavior
-always @(*)
+always @(posedge clk)
 begin
 	a = regmem [src_reg];		//Always output a to ALU w/src_reg
 	b = regmem [dst_reg];		//Always output b to ALU w/dst_reg
 	pc_data_out = regmem [pc];	//Always output pc to pc + 2 operation
+	if (rst)
+		begin
+			for (i=4'd0; i<4'd15; i=i+1) 
+				regmem[i] <= 16'b0000000000000000;
+		end
+	
+	if (wr_en == 1'b1) 
+		// control_unit.v to set what is the wr_reg to modify
+		regmem[wr_reg] <= wr_data;
+	
+	else if (pc_inc == 1'b1)
+		//	control_unit.v to save new pc
+		regmem[pc] <= pc_data_in;
 end
 
-always @(posedge clk) 
-	begin
-		if (wr_en) 
-		// control_unit.v to set what is the wr_reg to modify
-			regmem[wr_reg] <= wr_data;
-		//	control_unit.v to save new pc
-		if (pc_inc)
-			regmem[pc] <= pc_data_in;
-	end
-
-	/*
-	TODO: Need to add a MUX before wr_data, to choose between 
-			PC, Status Register, General Registers
-	*/
 endmodule

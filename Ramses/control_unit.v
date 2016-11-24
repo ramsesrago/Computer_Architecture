@@ -90,6 +90,10 @@ begin
 	branch_en	= 1'b0;
 	pc_inc		= 1'b0;
 	op_code		= 5'd0;
+	wr_reg		= 4'd0;
+	src_reg 		= 4'd0;
+	dst_reg 		= 4'd0;
+	op_code		= 5'd0;
 	pc_offset	= 10'd0;
 end
 
@@ -105,10 +109,6 @@ always @(_fsm_state)
 					wr_en 		= 1'b0;
 					branch_en	= 1'b0;
 					pc_inc		= 1'b0;
-					op_code		= 5'd0;
-					src_reg 		= 4'd0;
-					dst_reg 		= 4'd0;
-					wr_reg		= 4'd0;
 					pc_offset	= 10'd0;
 				end
 			f1: 

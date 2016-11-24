@@ -1,1 +1,4 @@
-Warning (10273): Verilog HDL warning at ALU16bit.v(83): extended using "x" or "z" File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 83
+Warning (10273): Verilog HDL warning at ALU16bit.v(62): extended using "x" or "z" File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 62
+Warning (10273): Verilog HDL warning at control_unit.v(181): extended using "x" or "z" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 181
+Warning (10273): Verilog HDL warning at control_unit.v(184): extended using "x" or "z" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 184
+Warning (10268): Verilog HDL information at bank_register.v(32): always construct contains both blocking and non-blocking assignments File: C:/Computer_Architecture/Ramses/bank_register.v Line: 32

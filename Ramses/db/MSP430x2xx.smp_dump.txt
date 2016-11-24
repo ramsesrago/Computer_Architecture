@@ -1,9 +1,8 @@
 
-State Machine - |MSP430x2xx|control_unit:inst3|_fsm_state
-Name _fsm_state.f5 _fsm_state.f4 _fsm_state.f3 _fsm_state.f2 _fsm_state.f1 _fsm_state.f0 
-_fsm_state.f0 0 0 0 0 0 0 
-_fsm_state.f1 0 0 0 0 1 1 
-_fsm_state.f2 0 0 0 1 0 1 
-_fsm_state.f3 0 0 1 0 0 1 
-_fsm_state.f4 0 1 0 0 0 1 
-_fsm_state.f5 1 0 0 0 0 1 
+State Machine - |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state
+Name _fsm_state.f3 _fsm_state.f2 _fsm_state.f1 _fsm_state.f0 _fsm_state.f4 
+_fsm_state.f0 0 0 0 0 0 
+_fsm_state.f1 0 0 1 1 0 
+_fsm_state.f2 0 1 0 1 0 
+_fsm_state.f3 1 0 0 1 0 
+_fsm_state.f4 0 0 0 1 1 
