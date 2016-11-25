@@ -26,12 +26,42 @@ reg		[15: 0]	regpc;
 reg		[ 3: 0]	i;
 
 //	Parameters
-parameter pc = 0;
+parameter pc  = 0;
+parameter sp  = 1;
+parameter sr  = 2;
+parameter cg2 = 3;
+parameter r4  = 4;
+parameter r5  = 5;
+parameter r6  = 6;
+parameter r7  = 7;
+parameter r8  = 8;
+parameter r9  = 9;
+parameter r10 = 10;
+parameter r11 = 11;
+parameter r12 = 12;
+parameter r13 = 13;
+parameter r14 = 14;
+parameter r15 = 15;
 
 //Behavior
 initial 
 begin
-	regmem[pc] <= 16'b0000000000000000;
+	regmem[pc]  <= 16'b0000000000000000;
+	regmem[sp]  <= 16'b0000000000000000;
+	regmem[sr]  <= 16'b0000000000000000;
+	regmem[cg2] <= 16'b0000000000000000;
+	regmem[r4]  <= 16'b0001101000000010;
+	regmem[r5]  <= 16'b0000001000000100;
+	regmem[r6]  <= 16'b0000100000001000;
+	regmem[r7]  <= 16'b0000000000010100;
+	regmem[r8]  <= 16'b0000000100100000;
+	regmem[r9]  <= 16'b0000000001000100;
+	regmem[r10] <= 16'b0000100010000100;
+	regmem[r11] <= 16'b0000000100000010;
+	regmem[r12] <= 16'b0000001010000100;
+	regmem[r13] <= 16'b0000010100010000;
+	regmem[r14] <= 16'b0000100000100100;
+	regmem[r15] <= 16'b0001000000000100;
 end
 
 always @(posedge clk)
@@ -39,11 +69,11 @@ begin
 	a = regmem [src_reg];		//Always output a to ALU w/src_reg
 	b = regmem [dst_reg];		//Always output b to ALU w/dst_reg
 	pc_data_out = regmem [pc];	//Always output pc to pc + 2 operation
-	if (rst)
+	/*if (rst)
 		begin
 			for (i=4'd0; i<4'd15; i=i+1) 
 				regmem[i] <= 16'b0000000000000000;
-		end
+		end*/
 	
 	if (wr_en == 1'b1) 
 		// control_unit.v to set what is the wr_reg to modify

@@ -111,13 +111,13 @@ Z9 !s108 1480058073.000000
 R5
 n@a@l@u16bit_tb
 vbank_register
-R8
+!s110 1480059249
 !i10b 1
-!s100 QJUL>JjUTm9S9=2kXENeP2
-Ii6hmVhg[SFNIXgI31P`jm1
+!s100 7YXgZGo6MbWcQ>h5OdlT80
+Ik:BSV:Alcm=6l;5P4i=m11
 R1
 R2
-w1480054929
+w1480059235
 8C:/Computer_Architecture/Ramses/bank_register.v
 FC:/Computer_Architecture/Ramses/bank_register.v
 L0 1
@@ -125,7 +125,7 @@ R3
 r1
 !s85 0
 31
-R9
+!s108 1480059249.000000
 !s107 C:/Computer_Architecture/Ramses/bank_register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/bank_register.v|
 !i113 1
