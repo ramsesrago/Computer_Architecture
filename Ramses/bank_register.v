@@ -29,6 +29,11 @@ reg		[ 3: 0]	i;
 parameter pc = 0;
 
 //Behavior
+initial 
+begin
+	regmem[pc] <= 16'b0000000000000000;
+end
+
 always @(posedge clk)
 begin
 	a = regmem [src_reg];		//Always output a to ALU w/src_reg

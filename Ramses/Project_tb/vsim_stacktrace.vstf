@@ -1,0 +1,64 @@
+# Current time Fri Nov 25 00:17:49 2016
+# ModelSim ALTERA Stack Trace
+# Program = vsim
+# Id = "10.4d"
+# Version = "2015.12"
+# Date = "Dec 30 2015"
+# Platform = win32pe
+# Signature = 874ed53943f00d82c262b7eaf23d08ef
+# --> START OF USERCODE
+# 0    0x744bb6df: 'memset + 0x5f' in 'c:\windows\winsxs\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9247_none_5090cb78bcba4a35\msvcr90.dll'
+# <-- END OF USERCODE
+# 1    0x006f2b9a: '<unknown (@0x6f2b9a)>'
+# 2    0x005180b5: '<unknown (@0x5180b5)>'
+# 3    0x00fb043d: '<unknown (@0xfb043d)>'
+# 4    0x004011c5: '<unknown (@0x4011c5)>'
+# 5    0x005259cd: '<unknown (@0x5259cd)>'
+# 6    0x00529df6: '<unknown (@0x529df6)>'
+# 7    0x00529ec9: '<unknown (@0x529ec9)>'
+# 8    0x00529ee8: '<unknown (@0x529ee8)>'
+# 9    0x0073a763: '<unknown (@0x73a763)>'
+# 10   0x0083654d: '<unknown (@0x83654d)>'
+# 11   0x77be0053: 'LdrSetAppCompatDllRedirectionCallback + 0x1d6f3' in 'c:\windows\system32\ntdll.dll'
+# 12   0x77b9e8fa: 'RtlUnwind + 0x1ba' in 'c:\windows\system32\ntdll.dll'
+# 13   0x77bb002f: 'KiUserExceptionDispatcher + 0xf' in 'c:\windows\system32\ntdll.dll'
+# 14   0x006f2b9a: '<unknown (@0x6f2b9a)>'
+# 15   0x004f04e6: '<unknown (@0x4f04e6)>'
+# 16   0xff0b348e: 'C:/Computer_Architecture/Ramses/bank_register.v:45'
+# 17   0x0040105c: '<unknown (@0x40105c)>'
+# 18   0x00444bb5: '<unknown (@0x444bb5)>'
+# End of Stack Trace
+
+
+# Current time Fri Nov 25 00:21:51 2016
+# ModelSim ALTERA Stack Trace
+# Program = vsim
+# Id = "10.4d"
+# Version = "2015.12"
+# Date = "Dec 30 2015"
+# Platform = win32pe
+# Signature = 874ed53943f00d82c262b7eaf23d08ef
+# --> START OF USERCODE
+# 0    0x744bb6df: 'memset + 0x5f' in 'c:\windows\winsxs\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9247_none_5090cb78bcba4a35\msvcr90.dll'
+# <-- END OF USERCODE
+# 1    0x006f2b9a: '<unknown (@0x6f2b9a)>'
+# 2    0x005180b5: '<unknown (@0x5180b5)>'
+# 3    0x00fb043d: '<unknown (@0xfb043d)>'
+# 4    0x004011c5: '<unknown (@0x4011c5)>'
+# 5    0x005259cd: '<unknown (@0x5259cd)>'
+# 6    0x00529df6: '<unknown (@0x529df6)>'
+# 7    0x00529ec9: '<unknown (@0x529ec9)>'
+# 8    0x00529ee8: '<unknown (@0x529ee8)>'
+# 9    0x0073a763: '<unknown (@0x73a763)>'
+# 10   0x0083654d: '<unknown (@0x83654d)>'
+# 11   0x77be0053: 'LdrSetAppCompatDllRedirectionCallback + 0x1d6f3' in 'c:\windows\system32\ntdll.dll'
+# 12   0x77b9e8fa: 'RtlUnwind + 0x1ba' in 'c:\windows\system32\ntdll.dll'
+# 13   0x77bb002f: 'KiUserExceptionDispatcher + 0xf' in 'c:\windows\system32\ntdll.dll'
+# 14   0x006f2b9a: '<unknown (@0x6f2b9a)>'
+# 15   0x004f04e6: '<unknown (@0x4f04e6)>'
+# 16   0xff0b348e: 'C:/Computer_Architecture/Ramses/bank_register.v:45'
+# 17   0x0040105c: '<unknown (@0x40105c)>'
+# 18   0x00444bb5: '<unknown (@0x444bb5)>'
+# End of Stack Trace
+
+

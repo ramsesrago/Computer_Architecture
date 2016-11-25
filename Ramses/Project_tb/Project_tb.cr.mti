@@ -1,4 +1,18 @@
-C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit.v
+C:/Computer_Architecture/Ramses/double_op_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/double_op_tb.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module double_op_tb
+
+Top level modules:
+	double_op_tb
+
+} {} {}} C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module MSP430x2xx_block_diagram
+
+Top level modules:
+	MSP430x2xx_block_diagram
+
+} {} {}} C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module ALU16bit
 
@@ -18,6 +32,20 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 
 Top level modules:
 	mux16bit
+
+} {} {}} C:/Computer_Architecture/Ramses/MSP430x2xx.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/MSP430x2xx.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module MSP430x2xx
+
+Top level modules:
+	MSP430x2xx
+
+} {} {}} C:/Computer_Architecture/Ramses/mux16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mux16bits.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module mux_16_bits
+
+Top level modules:
+	mux_16_bits
 
 } {} {}} C:/Computer_Architecture/Ramses/instruction_mem_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -63,6 +91,20 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	mux_1_bit
 
+} {} {}} C:/Computer_Architecture/Ramses/control_unit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/control_unit.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module control_unit
+
+Top level modules:
+	control_unit
+
+} {} {}} C:/Computer_Architecture/Ramses/adder16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adder16bits.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module adder16bits
+
+Top level modules:
+	adder16bits
+
 } {} {}} C:/Computer_Architecture/Ramses/mult_by_2_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mult_by_2_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module mult_by_2_tb
@@ -84,7 +126,7 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	mult_by_2
 
-} {} {}} C:/Computer_Architecture/Ramses/control_unit_tb.v {1 {vlog -work work -stats=none {C:\Computer_Architecture\Ramses\control_unit_tb.v}
+} {} {}} C:/Computer_Architecture/Ramses/control_unit_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/control_unit_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module control_unit_tb
 
