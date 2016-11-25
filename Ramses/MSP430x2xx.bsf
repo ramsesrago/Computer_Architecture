@@ -122,6 +122,13 @@ agreement for further details.
 		(text "Wr_en_out" (rect 156 187 203 199)(font "Arial" ))
 		(line (pt 224 192)(pt 208 192)(line_width 1))
 	)
+	(port
+		(pt 224 208)
+		(output)
+		(text "PC" (rect 0 0 12 12)(font "Arial" ))
+		(text "PC" (rect 191 203 203 215)(font "Arial" ))
+		(line (pt 224 208)(pt 208 208)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 208 224)(line_width 1))
 	)

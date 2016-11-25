@@ -16,7 +16,7 @@ initial
 		result = 16'd0;
 	end
 	
-always@(sel)
+always@(*)
 	begin
 		if (sel == 1'b0)
 			result = data0x;
