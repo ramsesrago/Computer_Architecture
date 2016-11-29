@@ -22,6 +22,8 @@ wire	[ 3: 0] Dst_reg_out_tb;
 wire			  PC_inc_out_tb;
 wire			  Wr_en_out_tb;
 wire	[15: 0] PC_tb;
+wire	[ 9: 0] PC_offset_out_tb;
+wire	[ 9: 0] PC_after_x2_out_tb;
 
 // Instantiate unit under test (adder)
 	MSP430x2xx MSP430x2xx_tb  (.Load_en(Load_en_tb), .Clk(Clk_tb), .Rst(Rst_tb),
@@ -30,7 +32,8 @@ wire	[15: 0] PC_tb;
 										.A_data_out(A_data_out_tb), .B_data_out(B_data_out_tb),
 										.Src_reg_out(Src_reg_out_tb), .Dst_reg_out(Dst_reg_out_tb),
 										.Wr_en_out(Wr_en_out_tb), .PC_inc_out(PC_inc_out_tb),
-										.PC(PC_tb));
+										.PC(PC_tb), .PC_offset_out(PC_offset_out_tb), 
+										.PC_after_x2_out(PC_after_x2_out_tb));
 
 initial
 begin

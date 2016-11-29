@@ -28,6 +28,7 @@ reg		[ 3: 0]	_wr_reg;				//Register to write information inner
 reg		[ 3: 0]	_src_reg;			//Search reg in bank register inner
 reg		[ 3: 0]	_dst_reg; 			//Search reg in bank register inner
 reg		[ 4: 0]	_op_code;			//Alu selection Mux inner
+reg		[ 1: 0]  _jp_code;			//Code to know what jump opperation has to be done
 reg		[ 2: 0]  _fsm_state;			//Sharing fsm current state
 reg		[15: 0]	_instruction_reg;	//Instruction comming from PC
 reg		[ 3: 0]	_inst_doub_flags;	//Flags indicating addressing mode
@@ -49,6 +50,14 @@ parameter f1 = 1;
 parameter f2 = 2;
 parameter f3 = 3;
 parameter f4 = 4;
+/*
+In type_operation, will change depending on op_code in instruction. 
+type_operation = 0 << Single Operand operations 
+type_operation = 1 << Jump operation
+type_operation = 2 << Doble operand operations
+*/
+real type_operaton = 2;
+
 
 /*
 State Machine logic planning
@@ -119,9 +128,20 @@ always @(_fsm_state)
 					*/
 					fsm_state = 5'b00001;
 					_instruction_reg = instruction;
-					en_pc_2		= 1'b1;					//Sum enabler for PC
-					pc_inc		= 1'b1;					//Input in bank_register.v
-					branch_en	= 1'b0;					//In MUX select the input on the PC
+					en_pc_2		= 1'b1;							//Sum enabler for PC, always needed
+					if (type_operaton == 0)
+						begin
+						end
+					else if (type_operaton == 1)				//Jump operations
+						begin
+							pc_inc		= 1'b0;					//Multiplication on offset must be done first
+							branch_en	= 1'b1;					//In MUX select the input on the PC
+						end
+					else												//Double operand operations					
+						begin	
+							pc_inc		= 1'b1;					//Input in bank_register.v
+							branch_en	= 1'b0;					//In MUX select the input on the PC
+						end
 				end
 			f2: 
 				begin
@@ -132,15 +152,26 @@ always @(_fsm_state)
 						wr_reg [3:0] will be set to write on it
 					*/
 					fsm_state 	= 5'b00010;
-					en_pc_2		= 1'b0;					//Turn off prev signals
-					pc_inc		= 1'b0;					//branch_en could be set at this point for jmp ops
-					
-					
+					en_pc_2		= 1'b0;					//This is always needed
+					if (type_operaton == 1)				//Jump operations
+						begin
+							pc_inc		= 1'b1;					//Multiplication on offset must be done first
+							branch_en	= 1'b1;					//In MUX select the input on the PC
+						end
+					else												//Double operand operations					
+						begin	
+							pc_inc		= 1'b0;					//Input in bank_register.v
+							branch_en	= 1'b0;					//In MUX select the input on the PC
+						end					
 				end
 			f3: 
 				begin
 					fsm_state 	= 5'b00100;
 					wr_en 		= 1'b1;					//In order to save value into the register
+					if (type_operaton == 1)				//Jump operations
+						begin
+							pc_inc		= 1'b0;					//Multiplication on offset must be done first
+						end
 					
 				end
 			f4:
@@ -176,12 +207,61 @@ always @(posedge clk or posedge rst)
 always @(_instruction_reg)
 	begin
 		_op_code = _instruction_reg[15:12];
+		_jp_code = _instruction_reg[11:10];
 		case (_op_code)
 			4'h1:				//	Special-Op
-				op_code 		= 5'hx;
-			4'h2,
+			begin
+				op_code 			= 5'h1f;
+				type_operaton	= 1;
+			end
+			
+			//Jump Operations
+			4'h2:
+			begin
+				op_code			= 5'h1f;
+				type_operaton 	= 1;
+				case (_jp_code)
+					2'b00:	// JNE/JNZ
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b01:	// JEQ/JZ
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b10:	// JNC
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b11:	// JGE
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+				endcase
+			end
 			4'h3:				//	Jump-Op
-				op_code		= 5'hx;
+			begin
+				op_code			= 5'h1f;
+				type_operaton 	= 1;
+				case (_jp_code)
+					2'b00:	// JN
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b01:	// JGE
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b10:	// JL
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+					2'b11:	// JMP
+						begin
+							pc_offset = _instruction_reg[ 9: 0];
+						end
+				endcase
+			end
 			//	Double-Op
 			4'h4: 
 				begin

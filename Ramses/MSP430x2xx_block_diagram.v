@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition"
-// CREATED		"Fri Nov 25 01:14:22 2016"
+// CREATED		"Tue Nov 29 00:48:09 2016"
 
 module MSP430x2xx_block_diagram(
 	Clk,
@@ -30,7 +30,9 @@ module MSP430x2xx_block_diagram(
 	Fsm,
 	Instr,
 	PC,
+	PC_after_x2_out,
 	PC_data_in_out,
+	PC_offset_out,
 	Res,
 	Src_reg_out
 );
@@ -48,7 +50,9 @@ output wire	[3:0] Flags;
 output wire	[4:0] Fsm;
 output wire	[15:0] Instr;
 output wire	[15:0] PC;
+output wire	[9:0] PC_after_x2_out;
 output wire	[15:0] PC_data_in_out;
+output wire	[9:0] PC_offset_out;
 output wire	[15:0] Res;
 output wire	[3:0] Src_reg_out;
 
@@ -78,7 +82,9 @@ assign	B_data_out = SYNTHESIZED_WIRE_1;
 assign	Dst_reg_out = SYNTHESIZED_WIRE_6;
 assign	Instr = SYNTHESIZED_WIRE_11;
 assign	PC = SYNTHESIZED_WIRE_20;
+assign	PC_after_x2_out = SYNTHESIZED_WIRE_16;
 assign	PC_data_in_out = SYNTHESIZED_WIRE_7;
+assign	PC_offset_out = SYNTHESIZED_WIRE_12;
 assign	Res = SYNTHESIZED_WIRE_9;
 assign	Src_reg_out = SYNTHESIZED_WIRE_8;
 

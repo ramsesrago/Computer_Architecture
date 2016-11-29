@@ -1,13 +1,13 @@
-Fitter Status : Successful - Thu Nov 24 23:46:37 2016
+Fitter Status : Successful - Fri Nov 25 02:06:55 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : MSP430x2xx
 Top-level Entity Name : MSP430x2xx
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 305 / 32,070 ( < 1 % )
-Total registers : 327
-Total pins : 102 / 457 ( 22 % )
+Logic utilization (in ALMs) : 300 / 32,070 ( < 1 % )
+Total registers : 335
+Total pins : 118 / 457 ( 26 % )
 Total virtual pins : 0
 Total block memory bits : 4,112 / 4,065,280 ( < 1 % )
 Total RAM Blocks : 1 / 397 ( < 1 % )

@@ -70,6 +70,22 @@ agreement for further details.
 )
 (pin
 	(output)
+	(rect 1848 -80 2100 -64)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "PC_offset_out[9..0]" (rect 90 0 246 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
 	(rect 1848 72 2024 88)
 	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
 	(text "Src_reg_out[3..0]" (rect 90 0 230 14)(font "Arial" ))
@@ -249,6 +265,22 @@ agreement for further details.
 	(rect 1848 -32 2024 -16)
 	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
 	(text "PC[15..0]" (rect 90 0 164 14)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 1848 -112 2024 -96)
+	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
+	(text "PC_after_x2_out[9..0]" (rect 90 0 263 14)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -518,7 +550,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 920 80 1112 192)
+	(rect 920 88 1112 200)
 	(text "mux_16_bits" (rect 5 0 95 14)(font "Arial" ))
 	(text "inst8" (rect 8 96 49 110)(font "Arial" ))
 	(port
@@ -740,11 +772,6 @@ agreement for further details.
 	(pt 1120 160)
 )
 (connector
-	(pt 904 112)
-	(pt 904 88)
-	(bus)
-)
-(connector
 	(pt 408 88)
 	(pt 904 88)
 	(bus)
@@ -752,11 +779,6 @@ agreement for further details.
 (connector
 	(pt 408 136)
 	(pt 408 88)
-	(bus)
-)
-(connector
-	(pt 896 136)
-	(pt 896 128)
 	(bus)
 )
 (connector
@@ -792,20 +814,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 904 112)
-	(pt 920 112)
-	(bus)
-)
-(connector
-	(pt 896 128)
-	(pt 920 128)
-	(bus)
-)
-(connector
-	(pt 904 144)
-	(pt 920 144)
-)
-(connector
 	(pt 352 136)
 	(pt 408 136)
 	(bus)
@@ -821,16 +829,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 880 136)
-	(pt 896 136)
-	(bus)
-)
-(connector
-	(pt 1112 112)
-	(pt 1136 112)
-	(bus)
-)
-(connector
 	(pt 512 176)
 	(pt 440 176)
 	(bus)
@@ -838,11 +836,6 @@ agreement for further details.
 (connector
 	(pt 672 176)
 	(pt 688 176)
-	(bus)
-)
-(connector
-	(pt 688 176)
-	(pt 688 152)
 	(bus)
 )
 (connector
@@ -962,16 +955,6 @@ agreement for further details.
 (connector
 	(pt 1136 8)
 	(pt 1848 8)
-	(bus)
-)
-(connector
-	(pt 1136 8)
-	(pt 1136 112)
-	(bus)
-)
-(connector
-	(pt 1136 112)
-	(pt 1136 240)
 	(bus)
 )
 (connector
@@ -1114,15 +1097,6 @@ agreement for further details.
 	(pt 400 376)
 )
 (connector
-	(pt 904 144)
-	(pt 904 376)
-)
-(connector
-	(pt 440 176)
-	(pt 440 424)
-	(bus)
-)
-(connector
 	(pt 1848 408)
 	(pt 400 408)
 	(bus)
@@ -1151,14 +1125,6 @@ agreement for further details.
 (connector
 	(pt 1152 384)
 	(pt 1152 392)
-)
-(connector
-	(pt 400 344)
-	(pt 1216 344)
-)
-(connector
-	(pt 1216 344)
-	(pt 1848 344)
 )
 (connector
 	(pt 112 280)
@@ -1212,6 +1178,82 @@ agreement for further details.
 	(pt 1528 160)
 	(bus)
 )
+(connector
+	(pt 904 88)
+	(pt 904 120)
+	(bus)
+)
+(connector
+	(pt 904 120)
+	(pt 920 120)
+	(bus)
+)
+(connector
+	(pt 904 152)
+	(pt 920 152)
+)
+(connector
+	(pt 1136 120)
+	(pt 1112 120)
+	(bus)
+)
+(connector
+	(pt 904 376)
+	(pt 904 152)
+)
+(connector
+	(pt 880 136)
+	(pt 920 136)
+	(bus)
+)
+(connector
+	(pt 1136 8)
+	(pt 1136 120)
+	(bus)
+)
+(connector
+	(pt 1136 120)
+	(pt 1136 240)
+	(bus)
+)
+(connector
+	(pt 400 344)
+	(pt 1216 344)
+)
+(connector
+	(pt 1216 344)
+	(pt 1848 344)
+)
+(connector
+	(pt 440 -72)
+	(pt 1848 -72)
+	(bus)
+)
+(connector
+	(pt 440 -72)
+	(pt 440 176)
+	(bus)
+)
+(connector
+	(pt 440 176)
+	(pt 440 424)
+	(bus)
+)
+(connector
+	(pt 688 -104)
+	(pt 688 152)
+	(bus)
+)
+(connector
+	(pt 688 152)
+	(pt 688 176)
+	(bus)
+)
+(connector
+	(pt 688 -104)
+	(pt 1848 -104)
+	(bus)
+)
 (junction (pt 96 312))
 (junction (pt -152 288))
 (junction (pt 408 136))
@@ -1220,7 +1262,6 @@ agreement for further details.
 (junction (pt 80 328))
 (junction (pt 112 280))
 (junction (pt -136 136))
-(junction (pt 1136 112))
 (junction (pt 1552 128))
 (junction (pt 1536 144))
 (junction (pt 1224 144))
@@ -1228,3 +1269,6 @@ agreement for further details.
 (junction (pt 1152 384))
 (junction (pt 1216 344))
 (junction (pt 1528 72))
+(junction (pt 440 176))
+(junction (pt 688 152))
+(junction (pt 1136 120))

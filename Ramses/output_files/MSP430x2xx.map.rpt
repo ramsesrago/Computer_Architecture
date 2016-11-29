@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MSP430x2xx
-Thu Nov 24 23:41:36 2016
+Fri Nov 25 01:43:00 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -18,17 +18,18 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  10. User-Specified and Inferred Latches
  11. Registers Removed During Synthesis
  12. General Register Statistics
- 13. Registers Packed Into Inferred Megafunctions
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated
- 16. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
- 17. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
- 18. Parameter Settings for Inferred Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 13. Inverted Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated
+ 17. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
+ 18. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
+ 19. Parameter Settings for Inferred Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,14 +56,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 24 23:41:36 2016       ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 25 01:43:00 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; MSP430x2xx                                  ;
 ; Top-level Entity Name           ; MSP430x2xx                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 325                                         ;
-; Total pins                      ; 102                                         ;
+; Total pins                      ; 118                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,112                                       ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -209,18 +210,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 307       ;
+; Estimate of Logic utilization (ALMs needed) ; 306       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 393       ;
+; Combinational ALUT usage for logic          ; 408       ;
 ;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 191       ;
+;     -- 6 input functions                    ; 177       ;
 ;     -- 5 input functions                    ; 54        ;
 ;     -- 4 input functions                    ; 41        ;
-;     -- <=3 input functions                  ; 106       ;
+;     -- <=3 input functions                  ; 135       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 325       ;
 ;                                             ;           ;
-; I/O pins                                    ; 102       ;
+; I/O pins                                    ; 118       ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 4112      ;
 ;                                             ;           ;
@@ -228,8 +229,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
 ; Maximum fan-out                             ; 325       ;
-; Total fan-out                               ; 3429      ;
-; Average fan-out                             ; 3.66      ;
+; Total fan-out                               ; 3165      ;
+; Average fan-out                             ; 3.21      ;
 +---------------------------------------------+-----------+
 
 
@@ -238,11 +239,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name              ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |MSP430x2xx                                  ; 393 (0)           ; 325 (0)      ; 4112              ; 0          ; 102  ; 0            ; |MSP430x2xx                                                                                                                    ; MSP430x2xx_block_diagram ; work         ;
-;    |MSP430x2xx_block_diagram:MSP430x2xx|     ; 393 (0)           ; 325 (0)      ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx                                                                                ; MSP430x2xx_block_diagram ; work         ;
+; |MSP430x2xx                                  ; 408 (0)           ; 325 (0)      ; 4112              ; 0          ; 118  ; 0            ; |MSP430x2xx                                                                                                                    ; MSP430x2xx_block_diagram ; work         ;
+;    |MSP430x2xx_block_diagram:MSP430x2xx|     ; 408 (0)           ; 325 (0)      ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx                                                                                ; MSP430x2xx_block_diagram ; work         ;
 ;       |ALU16bit:inst|                        ; 153 (153)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst                                                                  ; ALU16bit                 ; work         ;
 ;       |adderpc:inst5|                        ; 15 (15)           ; 16 (16)      ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5                                                                  ; adderpc                  ; work         ;
-;       |bank_register:inst2|                  ; 191 (191)         ; 304 (304)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2                                                            ; bank_register            ; work         ;
+;       |bank_register:inst2|                  ; 206 (206)         ; 304 (304)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2                                                            ; bank_register            ; work         ;
 ;       |control_unit:inst3|                   ; 34 (34)           ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3                                                             ; control_unit             ; work         ;
 ;       |instruction_mem:inst1|                ; 0 (0)             ; 0 (0)        ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1                                                          ; instruction_mem          ; work         ;
 ;          |altsyncram:Inst_mem_rtl_0|         ; 0 (0)             ; 0 (0)        ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0                                ; altsyncram               ; work         ;
@@ -352,13 +353,52 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 325   ;
-; Number of registers using Synchronous Clear  ; 240   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 256   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                     ;
++------------------------------------------------------------------------+---------+
+; Inverted Register                                                      ; Fan out ;
++------------------------------------------------------------------------+---------+
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][1]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][1]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][2]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][2]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][2]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][3]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][4]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][4]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][5]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][6]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][7]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][7]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][8]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][8]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][8]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][9]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][9]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][9]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][10] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][11]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][11]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][11] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][11] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][12]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][12] ; 2       ;
+; Total number of inverted registers = 30                                ;         ;
++------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -370,30 +410,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[1][9]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[2][14]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[3][3]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][13]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][6]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][2]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][8]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][1]   ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][14]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][4]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][11] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][3]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][10] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][1]  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][8]   ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[3]           ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[11]          ;
-; 9:1                ; 15 bits   ; 90 LEs        ; 75 LEs               ; 15 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux6                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][4] ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[15]        ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[12]        ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 75 LEs               ; 15 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux9               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -425,6 +451,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                                        ;
 +----------------+-------+-----------------------------------------------------------------------------+
 ; pc             ; 0     ; Signed Integer                                                              ;
+; sp             ; 1     ; Signed Integer                                                              ;
+; sr             ; 2     ; Signed Integer                                                              ;
+; cg2            ; 3     ; Signed Integer                                                              ;
+; r4             ; 4     ; Signed Integer                                                              ;
+; r5             ; 5     ; Signed Integer                                                              ;
+; r6             ; 6     ; Signed Integer                                                              ;
+; r7             ; 7     ; Signed Integer                                                              ;
+; r8             ; 8     ; Signed Integer                                                              ;
+; r9             ; 9     ; Signed Integer                                                              ;
+; r10            ; 10    ; Signed Integer                                                              ;
+; r11            ; 11    ; Signed Integer                                                              ;
+; r12            ; 12    ; Signed Integer                                                              ;
+; r13            ; 13    ; Signed Integer                                                              ;
+; r14            ; 14    ; Signed Integer                                                              ;
+; r15            ; 15    ; Signed Integer                                                              ;
 +----------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -517,11 +558,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 325                         ;
 ;     CLR               ; 5                           ;
-;     ENA               ; 16                          ;
-;     ENA SCLR          ; 224                         ;
-;     ENA SCLR SLD      ; 16                          ;
+;     ENA               ; 240                         ;
+;     ENA SLD           ; 16                          ;
 ;     plain             ; 64                          ;
-; arriav_lcell_comb     ; 394                         ;
+; arriav_lcell_comb     ; 409                         ;
 ;     arith             ; 47                          ;
 ;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 17                          ;
@@ -529,22 +569,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 1                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 329                         ;
+;     normal            ; 344                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 8                           ;
+;         1 data inputs ; 33                          ;
+;         2 data inputs ; 7                           ;
 ;         3 data inputs ; 47                          ;
 ;         4 data inputs ; 26                          ;
 ;         5 data inputs ; 53                          ;
-;         6 data inputs ; 191                         ;
+;         6 data inputs ; 177                         ;
 ;     shared            ; 17                          ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 16                          ;
-; boundary_port         ; 102                         ;
+; boundary_port         ; 118                         ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.50                        ;
-; Average LUT depth     ; 2.74                        ;
+; Average LUT depth     ; 2.70                        ;
 +-----------------------+-----------------------------+
 
 
@@ -553,7 +593,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -563,7 +603,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Nov 24 23:41:03 2016
+    Info: Processing started: Fri Nov 25 01:40:54 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSP430x2xx -c MSP430x2xx
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu16bit_tb.v
@@ -601,7 +641,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file double_
 Info (12021): Found 1 design units, including 1 entities, in source file mux16bits.v
     Info (12023): Found entity 1: mux_16_bits File: C:/Computer_Architecture/Ramses/mux16bits.v Line: 1
 Info (12127): Elaborating entity "MSP430x2xx" for the top level hierarchy
-Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 39
+Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 41
 Info (12128): Elaborating entity "control_unit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3"
 Warning (10036): Verilog HDL or VHDL warning at control_unit.v(33): object "_inst_doub_flags" assigned a value but never read File: C:/Computer_Architecture/Ramses/control_unit.v Line: 33
 Warning (10235): Verilog HDL Always Construct warning at control_unit.v(121): variable "instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
@@ -665,10 +705,7 @@ Warning (10030): Net "Inst_mem.data_a" at instruction_mem.v(13) has no driver or
 Warning (10030): Net "Inst_mem.waddr_a" at instruction_mem.v(13) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 13
 Warning (10030): Net "Inst_mem.we_a" at instruction_mem.v(13) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 13
 Info (12128): Elaborating entity "bank_register" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2"
-Warning (10230): Verilog HDL assignment warning at bank_register.v(39): truncated value with size 32 to match size of target (4) File: C:/Computer_Architecture/Ramses/bank_register.v Line: 39
 Info (12128): Elaborating entity "mux_16_bits" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8"
-Warning (10235): Verilog HDL Always Construct warning at mux16bits.v(22): variable "data0x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/mux16bits.v Line: 22
-Warning (10235): Verilog HDL Always Construct warning at mux16bits.v(24): variable "data1x" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/mux16bits.v Line: 24
 Info (12128): Elaborating entity "adderpc" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5"
 Info (12128): Elaborating entity "adder16bits" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adder16bits:inst6"
 Info (12128): Elaborating entity "mult_by_2" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4"
@@ -791,16 +828,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "Load_en" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 6
-Info (21057): Implemented 787 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 788 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 99 output pins
-    Info (21061): Implemented 669 logic cells
+    Info (21059): Implemented 115 output pins
+    Info (21061): Implemented 654 logic cells
     Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
-    Info: Peak virtual memory: 903 megabytes
-    Info: Processing ended: Thu Nov 24 23:41:36 2016
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:54
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 914 megabytes
+    Info: Processing ended: Fri Nov 25 01:43:00 2016
+    Info: Elapsed time: 00:02:06
+    Info: Total CPU time (on all processors): 00:01:39
 
 
 +------------------------------------------+

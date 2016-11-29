@@ -1,5 +1,5 @@
 Flow report for MSP430x2xx
-Thu Nov 24 23:47:32 2016
+Fri Nov 25 02:08:58 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Nov 24 23:47:32 2016       ;
+; Flow Status                     ; Successful - Fri Nov 25 02:08:58 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; MSP430x2xx                                  ;
 ; Top-level Entity Name           ; MSP430x2xx                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 305 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 327                                         ;
-; Total pins                      ; 102 / 457 ( 22 % )                          ;
+; Logic utilization (in ALMs)     ; 300 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 335                                         ;
+; Total pins                      ; 118 / 457 ( 26 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 4,112 / 4,065,280 ( < 1 % )                 ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/24/2016 23:41:03 ;
+; Start date & time ; 11/25/2016 01:40:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MSP430x2xx          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 26833618269519.148005246315684        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 26833618269519.148005965606436        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
@@ -101,12 +101,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:30     ; 1.0                     ; 891 MB              ; 00:00:54                           ;
-; Fitter                    ; 00:05:00     ; 1.0                     ; 2235 MB             ; 00:05:13                           ;
-; Assembler                 ; 00:00:18     ; 1.0                     ; 917 MB              ; 00:00:12                           ;
-; TimeQuest Timing Analyzer ; 00:00:22     ; 1.0                     ; 1219 MB             ; 00:00:18                           ;
-; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 835 MB              ; 00:00:03                           ;
-; Total                     ; 00:06:14     ; --                      ; --                  ; 00:06:40                           ;
+; Analysis & Synthesis      ; 00:02:03     ; 1.0                     ; 901 MB              ; 00:01:38                           ;
+; Fitter                    ; 00:23:54     ; 1.0                     ; 2216 MB             ; 00:17:09                           ;
+; Assembler                 ; 00:00:49     ; 1.0                     ; 928 MB              ; 00:00:33                           ;
+; TimeQuest Timing Analyzer ; 00:00:50     ; 1.0                     ; 1237 MB             ; 00:00:40                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 837 MB              ; 00:00:04                           ;
+; Total                     ; 00:27:41     ; --                      ; --                  ; 00:20:04                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
