@@ -29,6 +29,7 @@ reg		[ 3: 0]	_src_reg;			//Search reg in bank register inner
 reg		[ 3: 0]	_dst_reg; 			//Search reg in bank register inner
 reg		[ 4: 0]	_op_code;			//Alu selection Mux inner
 reg		[ 1: 0]  _jp_code;			//Code to know what jump opperation has to be done
+reg		[ 4: 0] 	_sg_code;			//Code to know what single opperation has to be done
 reg		[ 2: 0]  _fsm_state;			//Sharing fsm current state
 reg		[15: 0]	_instruction_reg;	//Instruction comming from PC
 reg		[ 3: 0]	_inst_doub_flags;	//Flags indicating addressing mode
@@ -208,11 +209,45 @@ always @(_instruction_reg)
 	begin
 		_op_code = _instruction_reg[15:12];
 		_jp_code = _instruction_reg[11:10];
+		_sg_code = _instruction_reg[11: 6];
 		case (_op_code)
 			4'h1:				//	Special-Op
 			begin
 				op_code 			= 5'h1f;
-				type_operaton	= 1;
+				type_operaton	= 0;
+				case (_sg_code)
+				begin
+					6'd0:		// RRC
+						begin
+						end
+					6'd1:		// RRC.B
+						begin
+						end
+					6'd2:		// SWPB
+						begin
+						end
+					6'd4:		//RRA
+						begin	
+						end
+					6'd5:		//RRA.B
+						begin
+						end
+					6'd6:		//SXT
+						begin
+						end
+					6'd8:		//PUSH
+						begin
+						end
+					6'd9:		//PUSH.B
+						begin
+						end
+					6'd10:	//CALL
+						begin
+						end
+					6'd12:	//RETI
+						begin
+						end
+					endcase
 			end
 			
 			//Jump Operations
