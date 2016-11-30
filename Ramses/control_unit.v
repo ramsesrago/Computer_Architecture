@@ -130,17 +130,15 @@ always @(_fsm_state)
 					fsm_state = 5'b00001;
 					_instruction_reg = instruction;
 					en_pc_2		= 1'b1;							//Sum enabler for PC, always needed
-					if (type_operaton == 0)
+
+					if (type_operaton == 1)						//Jump operations
 						begin
-						end
-					else if (type_operaton == 1)				//Jump operations
-						begin
-							pc_inc		= 1'b0;					//Multiplication on offset must be done first
+							//pc_inc		= 1'b0;					//Multiplication on offset must be done first
 							branch_en	= 1'b1;					//In MUX select the input on the PC
 						end
 					else												//Double operand operations					
 						begin	
-							pc_inc		= 1'b1;					//Input in bank_register.v
+							//pc_inc		= 1'b1;					//Input in bank_register.v
 							branch_en	= 1'b0;					//In MUX select the input on the PC
 						end
 				end
@@ -154,14 +152,15 @@ always @(_fsm_state)
 					*/
 					fsm_state 	= 5'b00010;
 					en_pc_2		= 1'b0;					//This is always needed
+					pc_inc		= 1'b1;
 					if (type_operaton == 1)				//Jump operations
 						begin
-							pc_inc		= 1'b1;					//Multiplication on offset must be done first
+							//pc_inc		= 1'b1;					//Multiplication on offset must be done first
 							branch_en	= 1'b1;					//In MUX select the input on the PC
 						end
 					else												//Double operand operations					
 						begin	
-							pc_inc		= 1'b0;					//Input in bank_register.v
+							//pc_inc		= 1'b0;					//Input in bank_register.v
 							branch_en	= 1'b0;					//In MUX select the input on the PC
 						end					
 				end
@@ -169,10 +168,12 @@ always @(_fsm_state)
 				begin
 					fsm_state 	= 5'b00100;
 					wr_en 		= 1'b1;					//In order to save value into the register
-					if (type_operaton == 1)				//Jump operations
+					pc_inc		= 1'b0;
+					/*if (type_operaton == 1)				//Jump operations
+
 						begin
 							pc_inc		= 1'b0;					//Multiplication on offset must be done first
-						end
+						end*/
 					
 				end
 			f4:
@@ -216,36 +217,66 @@ always @(_instruction_reg)
 				op_code 			= 5'h1f;
 				type_operaton	= 0;
 				case (_sg_code)
-				begin
 					6'd0:		// RRC
 						begin
+							op_code 	= 5'b10000;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd1:		// RRC.B
 						begin
+							op_code 	= 5'b10001;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd2:		// SWPB
 						begin
+							op_code = 5'b10010;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd4:		//RRA
 						begin	
+							op_code = 5'b10011;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd5:		//RRA.B
 						begin
+							op_code = 5'b10100;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd6:		//SXT
 						begin
+							op_code = 5'b10101;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd8:		//PUSH
 						begin
+							op_code = 5'b10110;
+							src_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd9:		//PUSH.B
 						begin
+							op_code = 5'b10111;
+							src_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd10:	//CALL
 						begin
+							op_code = 5'b11000;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
 						end
 					6'd12:	//RETI
 						begin
+							op_code = 5'b11001;
+							dst_reg	= _instruction_reg[ 3: 0];
+							wr_reg	= _instruction_reg[ 3: 0];
+							//Function not to be implemented
 						end
 					endcase
 			end
@@ -316,7 +347,7 @@ always @(_instruction_reg)
 				end
 			4'h6: 
 				begin
-					op_code			= 5'b00010;		//ADDC
+					op_code				= 5'b00010;		//ADDC
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
 					src_reg				= _instruction_reg[11: 8];

@@ -58,6 +58,28 @@ always @(A or B or sel)
 		/*
 			end of DOUBLE OPERAND OPERATIONS
 		*/
+		/*
+			SINGLE OPERAND OPERATIONS
+		*/
+			5'b10000,									//RRC
+			5'b10001,
+			5'b10011,
+			5'b10100:
+				begin
+					if (C==1) 
+						begin
+							C = B[0];
+							result = (B/2)+16'h8000;
+						end
+					else 
+						begin
+							C = B[0];
+							result = (B/2);
+						end
+				end
+		/*
+			end of SINGLE OPERAND OPERATIONS
+		*/
 			
 			default: result = 16'bxxxx;
 		endcase
