@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/altera_lite/16.0
 vadder16bits
-Z0 !s110 1480476354
+Z0 !s110 1480545095
 !i10b 1
 !s100 _c2PUb:ZEe_kaaBb:PzdK3
 IjLK`aSG<K3coS_d_ianP51
@@ -23,13 +23,13 @@ Z3 OV;L;10.4d;61
 r1
 !s85 0
 31
-Z4 !s108 1480476354.000000
+Z4 !s108 1480545095.000000
 !s107 C:/Computer_Architecture/Ramses/adder16bits.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/adder16bits.v|
 !i113 1
 Z5 o-work work
 vadderpc
-R0
+Z6 !s110 1480545096
 !i10b 1
 !s100 zYPCTfHBHG<86k>Se?nE>1
 IMf2jz]X@:mmKA98<a8:og1
@@ -49,7 +49,7 @@ R4
 !i113 1
 R5
 vadderpc_tb
-Z6 !s110 1480476355
+R6
 !i10b 1
 !s100 _CFMge?mg_`K=Za^?THW:2
 IcmG<X=;G=fc=7ZYKHF@z63
@@ -63,19 +63,19 @@ R3
 r1
 !s85 0
 31
-Z7 !s108 1480476355.000000
+Z7 !s108 1480545096.000000
 !s107 C:/Computer_Architecture/Ramses/adderpc_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/adderpc_tb.v|
 !i113 1
 R5
 vALU16bit
-R0
+R6
 !i10b 1
-!s100 VU@leH9c:ROXDRQ6H024N1
-I;OhYeAaITWQfDg_BofFR;0
+!s100 @RM6iW<ST^5A=EMOchfNo1
+IEGn5O[88i`HTYMW>lFzP_3
 R1
 R2
-w1480473835
+w1480477331
 8C:/Computer_Architecture/Ramses/ALU16bit.v
 FC:/Computer_Architecture/Ramses/ALU16bit.v
 L0 1
@@ -83,14 +83,14 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/ALU16bit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/ALU16bit.v|
 !i113 1
 R5
 n@a@l@u16bit
 vALU16bit_tb
-R0
+R6
 !i10b 1
 !s100 57Z3WOBk:K^6m06=8l7Q]0
 IZZH2jo<l9DUASg65V?GRd2
@@ -104,20 +104,20 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/ALU16bit_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/ALU16bit_tb.v|
 !i113 1
 R5
 n@a@l@u16bit_tb
 vbank_register
-R0
+R6
 !i10b 1
-!s100 hz?D4DB90W_9mi36c25i23
-IO9128b7Zjel9:G?M@VSUg3
+!s100 PbD4SU>fZ=hjdCo6DHiN52
+I8l1L7JG^n0XfWh<>na16P0
 R1
 R2
-w1480473961
+w1480545086
 8C:/Computer_Architecture/Ramses/bank_register.v
 FC:/Computer_Architecture/Ramses/bank_register.v
 L0 1
@@ -125,19 +125,19 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/bank_register.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/bank_register.v|
 !i113 1
 R5
 vcontrol_unit
-R0
+R6
 !i10b 1
-!s100 :O:`LnQ6C@0R_d<:3VQW31
-I`V7BnGn6^CJA=:l_SNafF2
+!s100 eSQj]Q0OIhln3;1JjcA`A2
+IVPi;IMk[@^;F@5`dz2@0l3
 R1
 R2
-w1480476345
+w1480541076
 8C:/Computer_Architecture/Ramses/control_unit.v
 FC:/Computer_Architecture/Ramses/control_unit.v
 L0 1
@@ -145,13 +145,13 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/control_unit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/control_unit.v|
 !i113 1
 R5
 vcontrol_unit_tb
-R6
+Z8 !s110 1480545097
 !i10b 1
 !s100 dg[i:YnbKTkni<<^QjZ2z3
 IN<Lf8VWYCSPCJC5]2HMgU1
@@ -165,19 +165,19 @@ R3
 r1
 !s85 0
 31
-R7
+Z9 !s108 1480545097.000000
 !s107 C:/Computer_Architecture/Ramses/control_unit_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/control_unit_tb.v|
 !i113 1
 R5
 vdouble_op_tb
-R6
+R8
 !i10b 1
-!s100 ldzSUR2UWWz^GKR41Aj670
-IBM4M]677_310ifbbQR0G_0
+!s100 `DjR95Q>Dh3?WKzj9i^K]2
+IBiGe3GeE<F`@I0`fUC;oj3
 R1
 R2
-w1480402141
+w1480542666
 8C:/Computer_Architecture/Ramses/double_op_tb.v
 FC:/Computer_Architecture/Ramses/double_op_tb.v
 L0 3
@@ -185,7 +185,7 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/double_op_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/double_op_tb.v|
 !i113 1
@@ -193,11 +193,11 @@ R5
 vinstruction_mem
 R0
 !i10b 1
-!s100 QBAh6Wl5UhCMMCZ5SMn^71
-ITgeSRLb7EH?RBjA;mN0d:2
+!s100 fNdf9zg3beGC;o00B1PRo3
+I^6A6V@;RFlln56?NglWXg0
 R1
 R2
-w1479782659
+w1480543570
 8C:/Computer_Architecture/Ramses/instruction_mem.v
 FC:/Computer_Architecture/Ramses/instruction_mem.v
 L0 1
@@ -211,7 +211,7 @@ R4
 !i113 1
 R5
 vinstruction_mem_tb
-R6
+R8
 !i10b 1
 !s100 ho_=2k?CknTNK2c7X1BIC0
 I]PmZQ;4lVlzV@mP:eU0kl1
@@ -225,19 +225,19 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/instruction_mem_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/instruction_mem_tb.v|
 !i113 1
 R5
 vMSP430x2xx
-R0
+R6
 !i10b 1
-!s100 zFPWRl=5G0BmWO>llaMi;2
-I[cziC<T8d^Gj4BBVJQUZ;1
+!s100 =SEc`F:oV6256b<^@f^X42
+I>M>b3mN09Eaheen6AijQk0
 R1
 R2
-w1480401586
+w1480542909
 8C:/Computer_Architecture/Ramses/MSP430x2xx.v
 FC:/Computer_Architecture/Ramses/MSP430x2xx.v
 L0 1
@@ -245,20 +245,20 @@ R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/MSP430x2xx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/MSP430x2xx.v|
 !i113 1
 R5
 n@m@s@p430x2xx
 vMSP430x2xx_block_diagram
-R6
+R8
 !i10b 1
-!s100 T;iSCPk^De8aloLTTlJMV2
-I>ckQjMXIaZ639=XSeJm473
+!s100 f8fCZPDhliYlzCzKk0zkz0
+IM11jBB6fWjiaJSg_74^PX2
 R1
 R2
-w1480402089
+w1480542055
 8C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v
 FC:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v
 L0 20
@@ -266,14 +266,14 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v|
 !i113 1
 R5
 n@m@s@p430x2xx_block_diagram
 vmult_by_2
-R6
+R8
 !i10b 1
 !s100 mDlTXngmA^]d@_Z<S12HM0
 IYl9@`2nSW@_R_4l8Kioab3
@@ -287,13 +287,13 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/mult_by_2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mult_by_2.v|
 !i113 1
 R5
 vmult_by_2_tb
-R6
+R8
 !i10b 1
 !s100 2nWbjz5baG;M<3Ob^F6oY1
 IaY9gdVn<efadSoigU;ZWY2
@@ -307,7 +307,7 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/mult_by_2_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mult_by_2_tb.v|
 !i113 1
@@ -322,7 +322,7 @@ R2
 w1479698127
 8C:/Computer_Architecture/Ramses/mux16bit.v
 FC:/Computer_Architecture/Ramses/mux16bit.v
-Z8 L0 40
+Z10 L0 40
 R3
 r1
 !s85 0
@@ -333,7 +333,7 @@ R7
 !i113 1
 R5
 vmux_16_bits
-R6
+R8
 !i10b 1
 !s100 _Q1aGd9T3C@5TM`@RNSdd0
 ISKz^VBYBb9BVKzeakCDD>1
@@ -347,13 +347,13 @@ R3
 r1
 !s85 0
 31
-R7
+R9
 !s107 C:/Computer_Architecture/Ramses/mux16bits.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mux16bits.v|
 !i113 1
 R5
 vmux_1_bit
-R0
+R6
 !i10b 1
 !s100 `PF7k>ceB]Cdk^?zTWT282
 I<G8I5JNhaF@ZD8A<:N?kM0
@@ -362,12 +362,12 @@ R2
 w1479366798
 8C:/Computer_Architecture/Ramses/mux_1_bit.v
 FC:/Computer_Architecture/Ramses/mux_1_bit.v
-R8
+R10
 R3
 r1
 !s85 0
 31
-R4
+R7
 !s107 C:/Computer_Architecture/Ramses/mux_1_bit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Computer_Architecture/Ramses/mux_1_bit.v|
 !i113 1

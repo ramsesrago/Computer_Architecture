@@ -1,5 +1,6 @@
 module control_unit (
-				instruction, inst_load, clk, rst,
+				instruction, instruction_1, instruction_2,
+				clk, rst,
 				en_pc_2, src_reg, wr_reg,
 				dst_reg, wr_en, op_code, branch_en,
 				pc_inc, fsm_state, pc_offset
@@ -7,7 +8,8 @@ module control_unit (
 
 // Inputs 
 input 	[15: 0] 	instruction;		//Instruction comming from PC
-input 				inst_load; 			//Used for testing purposes
+input 	[15: 0] 	instruction_1;		//Instruction comming from PC
+input 	[15: 0] 	instruction_2;		//Instruction comming from PC
 input 				clk;					//System clk
 input					rst;					//Reset complete program
 

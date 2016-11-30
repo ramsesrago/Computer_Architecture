@@ -8,15 +8,15 @@ module ALU16bit(A, B, result, sel, flags);
 	output [3:0]  flags;
 	
 	/* regs */
-	reg    N, Z, C, V;
+	reg    [3:0]  flags;
 	reg 	 [15:0] result;
 	
 initial
 	begin
-		N = 1'b0;
-		Z = 1'b0;
-		C = 1'b0;
-		V = 1'b0;
+		flags[3] = 1'b0;
+		flags[2] = 1'b0;
+		flags[1] = 1'b0;
+		flags[0] = 1'b0;
 	end
 	
 always @(A or B or sel) 
@@ -28,27 +28,27 @@ always @(A or B or sel)
 		*/
 			5'b00000: result = A + B;				// MOV
 			5'b00001: result = A + B;				// ADD, ADD.B
-			5'b00010: result = A + B + C;			// ADDC
+			5'b00010: result = A + B + flags[1];// ADDC
 			5'b00011: result = A - B;				// SUB, SUB.B
-			5'b00100: result = A - B - C;			// SUBC
+			5'b00100: result = A - B - flags[1];// SUBC
 			5'b00101: 									//	CMP
 				begin
 					result = A - B;
-					if(A > B) N = 0;
-					else if( A == B) Z = 1;
-					else if(result[15] == 1) C = 1;
+					if(A > B) flags[3] = 0;
+					else if( A == B) flags[2] = 1;
+					else if(result[15] == 1) flags[1] = 1;
 				end
 			5'b00110: result = A + B;				// DADD
 			5'b00111: 									//	BIT
 				begin
-					if(result[15] == 1) N = 1;
-					else N = 0; 
+					if(result[15] == 1) flags[3] = 1;
+					else flags[3] = 0; 
 				
-					if(result == 16'b0) Z = 1;
-					else Z = 0;
+					if(result == 16'b0) flags[2] = 1;
+					else flags[2] = 0;
 							
-					if(result != 16'b0) C = 1;
-					else C = 0;
+					if(result != 16'b0) flags[1] = 1;
+					else flags[1] = 0;
 				end
 			5'b01000: result = ~A & result;		// BIC, BIC.B
 			5'b01001: result = A | result;		// BIS, BIS.B
@@ -66,14 +66,14 @@ always @(A or B or sel)
 			5'b10011,
 			5'b10100:
 				begin
-					if (C==1) 
+					if (flags[1]==1) 
 						begin
-							C = B[0];
+							flags[1] = B[0];
 							result = (B/2)+16'h8000;
 						end
 					else 
 						begin
-							C = B[0];
+							flags[1] = B[0];
 							result = (B/2);
 						end
 				end
@@ -84,7 +84,5 @@ always @(A or B or sel)
 			default: result = 16'bxxxx;
 		endcase
 	end
-	
-	assign flags = {N,Z,C,V};
 	
 endmodule
