@@ -1,9 +1,9 @@
 module control_unit (
 				instruction, instruction_1, instruction_2,
-				clk, rst,
+				clk, rst, 
 				en_pc_2, src_reg, wr_reg,
 				dst_reg, wr_en, op_code, branch_en,
-				pc_inc, fsm_state, pc_offset
+				pc_inc, fsm_state, pc_offset,wr_rom_en
 );
 
 // Inputs 
@@ -18,6 +18,7 @@ output				en_pc_2; 			//Goes to Mux to add 2 to PC
 output				wr_en;				//Tells Bank register when to write
 output				branch_en;			//Used for jump in Mux_2
 output				pc_inc;				//Load new data on PC
+output				wr_rom_en;			//Enabler to write specific address to memory
 output	[ 3: 0]	wr_reg;				//Register to write information
 output	[ 3: 0]	src_reg;				//Search reg in bank register
 output	[ 3: 0]	dst_reg; 			//Search reg in bank register
@@ -45,6 +46,7 @@ reg					en_pc_2; 			//Goes to Mux to add 2 to PC
 reg					wr_en;				//Tells Bank register when to write
 reg					branch_en;			//Used for jump in Mux_2
 reg					pc_inc;				//Load new data on PC
+reg					wr_rom_en;			//Enabler to write specific address to memory
  
 
 //Parameters
@@ -169,7 +171,8 @@ always @(_fsm_state)
 			f3: 
 				begin
 					fsm_state 	= 5'b00100;
-					wr_en 		= 1'b1;					//In order to save value into the register
+					if (type_operaton == 1) wr_en = 1'b0;	//In order to save value into the register
+					else wr_en = 1'b1;
 					pc_inc		= 1'b0;
 					/*if (type_operaton == 1)				//Jump operations
 
@@ -333,14 +336,19 @@ always @(_instruction_reg)
 			//	Double-Op
 			4'h4: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00000;							//MOV 
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
 					src_reg				= _instruction_reg[11: 8];
 					dst_reg				= _instruction_reg[ 3: 0];
+					if (wr_reg == 4'h9) wr_rom_en = 1'b1;
+					else wr_rom_en = 1'b0;
+					
 				end
 			4'h5: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00001;						//ADD and ADDB
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -349,6 +357,7 @@ always @(_instruction_reg)
 				end
 			4'h6: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00010;		//ADDC
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -357,6 +366,7 @@ always @(_instruction_reg)
 				end
 			4'h7: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00011;		//SUB
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -365,6 +375,7 @@ always @(_instruction_reg)
 				end
 			4'h8: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00100;		//SUBC
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -373,6 +384,7 @@ always @(_instruction_reg)
 				end
 			4'h9: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00101;		//CMP
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -381,6 +393,7 @@ always @(_instruction_reg)
 				end
 			4'hA: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00110;		//DADD
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -389,6 +402,7 @@ always @(_instruction_reg)
 				end
 			4'hB: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b00111;		//BIT
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -397,6 +411,7 @@ always @(_instruction_reg)
 				end
 			4'hC: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b01000;		//BIC
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -405,6 +420,7 @@ always @(_instruction_reg)
 				end
 			4'hD: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b01001;		//BIS
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -413,6 +429,7 @@ always @(_instruction_reg)
 				end
 			4'hE: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b01010;		//XOR
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -421,6 +438,7 @@ always @(_instruction_reg)
 				end
 			4'hF: 
 				begin
+					type_operaton		= 2;
 					op_code				= 5'b01011;		//AND
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];
@@ -428,36 +446,6 @@ always @(_instruction_reg)
 					dst_reg				= _instruction_reg[ 3: 0];
 				end
 		endcase
-		
-		/*case (_inst_doub_flags)
-			4'b0100,					//Register addressing mode
-			4'b0000:
-				begin
-					src_reg	= _instruction_reg[11: 8];
-					dst_reg	= _instruction_reg[ 3: 0];
-				end
-			4'b1001,					//Symbolic and Absolute addessing mode
-			4'b1101:
-				begin 
-					src_reg	= _instruction_reg[11: 8];
-					dst_reg	= _instruction_reg[ 3: 0];
-				end
-			4'bxx10:					//Indirect addressing mode
-				begin
-					src_reg	= _instruction_reg[11: 8];
-					dst_reg	= _instruction_reg[ 3: 0];
-				end
-			4'bxx11:					//Indirect auto increase, Inmediate mode
-				begin
-					src_reg	= _instruction_reg[11: 8];
-					dst_reg	= _instruction_reg[ 3: 0];
-				end
-			default:
-				begin
-					src_reg	= 4'h0;
-					dst_reg	= 4'b0;
-				end
-		endcase*/
 	end
 
 

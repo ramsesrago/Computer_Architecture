@@ -1,8 +1,12 @@
-module instruction_mem (clk, addr, inst, inst_1, inst_2);
+module instruction_mem (clk, addr, inst, inst_1, inst_2,
+								addr_wr_src, addr_wr_dest, addr_wr_en);
 
 // Inputs 
 input 				clk;
 input 	[15: 0]	addr;
+input 	[15: 0]  addr_wr_src;
+input		[15: 0]	addr_wr_dest;
+input					addr_wr_en;
 
 // Outputs
 output 	[15: 0]	inst;
@@ -23,6 +27,7 @@ reg		[15: 0]	Inst_2_reg;
 initial
 begin
 	$readmemb ("Imem.data", Inst_mem);
+	Inst_mem[57] = 16'h1234;
 end
 
 always @(posedge clk)
@@ -31,6 +36,8 @@ always @(posedge clk)
 		Inst_reg 	= Inst_mem[addr_reg];
 		Inst_1_reg 	= Inst_mem[addr_reg+1];
 		Inst_2_reg 	= Inst_mem[addr_reg+2];
+		if (addr_wr_en)
+			Inst_mem[addr_wr_dest] = Inst_mem[addr_wr_src];
 	end
 
 assign	inst   = Inst_reg;
