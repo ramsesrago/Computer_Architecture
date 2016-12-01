@@ -16,7 +16,7 @@ input					rst;					//Reset complete program
 // Outputs
 output				en_pc_2; 			//Goes to Mux to add 2 to PC 
 output				wr_en;				//Tells Bank register when to write
-output				branch_en;			//Used for jump in Mux_2
+output	[ 1: 0]	branch_en;			//Used for jump in Mux_2
 output				pc_inc;				//Load new data on PC
 output				wr_rom_en;			//Enabler to write specific address to memory
 output	[ 3: 0]	wr_reg;				//Register to write information
@@ -44,7 +44,7 @@ reg		[ 3: 0]	dst_reg; 			//Search reg in bank register
 reg		[ 3: 0]	wr_reg;				//Register to write information
 reg					en_pc_2; 			//Goes to Mux to add 2 to PC 
 reg					wr_en;				//Tells Bank register when to write
-reg					branch_en;			//Used for jump in Mux_2
+reg		[ 1: 0]	branch_en;			//Used for jump in Mux_2
 reg					pc_inc;				//Load new data on PC
 reg					wr_rom_en;			//Enabler to write specific address to memory
  
@@ -60,6 +60,7 @@ In type_operation, will change depending on op_code in instruction.
 type_operation = 0 << Single Operand operations 
 type_operation = 1 << Jump operation
 type_operation = 2 << Doble operand operations
+type_operation = 3 << Needs to be added +4 to the PC << Indexed, addressing modes
 */
 real type_operaton = 2;
 
@@ -101,7 +102,7 @@ begin
 	fsm_state 	= 5'b00000;
 	en_pc_2		= 1'b0;
 	wr_en 		= 1'b0;
-	branch_en	= 1'b0;
+	branch_en	= 2'b00;
 	pc_inc		= 1'b0;
 	op_code		= 5'd0;
 	wr_reg		= 4'd0;
@@ -121,7 +122,7 @@ always @(_fsm_state)
 					fsm_state 	= 5'b00000;
 					en_pc_2		= 1'b0;
 					wr_en 		= 1'b0;
-					branch_en	= 1'b0;
+					branch_en	= 2'b00;
 					pc_inc		= 1'b0;
 					pc_offset	= 10'd0;
 				end
@@ -138,12 +139,16 @@ always @(_fsm_state)
 					if (type_operaton == 1)						//Jump operations
 						begin
 							//pc_inc		= 1'b0;					//Multiplication on offset must be done first
-							branch_en	= 1'b1;					//In MUX select the input on the PC
+							branch_en	= 2'b01;					//In MUX select the input on the PC
+						end
+					else if (type_operaton == 3)
+						begin
+							branch_en 	= 2'b10;
 						end
 					else												//Double operand operations					
 						begin	
 							//pc_inc		= 1'b1;					//Input in bank_register.v
-							branch_en	= 1'b0;					//In MUX select the input on the PC
+							branch_en	= 2'b00;					//In MUX select the input on the PC
 						end
 				end
 			f2: 
@@ -160,12 +165,16 @@ always @(_fsm_state)
 					if (type_operaton == 1)				//Jump operations
 						begin
 							//pc_inc		= 1'b1;					//Multiplication on offset must be done first
-							branch_en	= 1'b1;					//In MUX select the input on the PC
+							branch_en	= 2'b01;					//In MUX select the input on the PC
+						end
+					else if (type_operaton == 3)
+						begin
+							branch_en 	= 2'b10;
 						end
 					else												//Double operand operations					
 						begin	
 							//pc_inc		= 1'b0;					//Input in bank_register.v
-							branch_en	= 1'b0;					//In MUX select the input on the PC
+							branch_en	= 2'b00;					//In MUX select the input on the PC
 						end					
 				end
 			f3: 
@@ -336,7 +345,7 @@ always @(_instruction_reg)
 			//	Double-Op
 			4'h4: 
 				begin
-					type_operaton		= 2;
+					type_operaton		= 3;
 					op_code				= 5'b00000;							//MOV 
 					_inst_doub_flags	= _instruction_reg[ 7: 4];
 					wr_reg				= _instruction_reg[ 3: 0];

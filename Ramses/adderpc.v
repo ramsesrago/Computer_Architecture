@@ -12,7 +12,7 @@ reg		[15: 0]	res;
 reg		[15: 0]	b;
 
 // Parameters
-always@(posedge en)
+always@(*)
 begin
 	b = 16'b0000000000000010;
 	res = a+b;

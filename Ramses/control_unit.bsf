@@ -104,9 +104,9 @@ agreement for further details.
 	(port
 		(pt 240 128)
 		(output)
-		(text "branch_en" (rect 0 0 42 12)(font "Arial" ))
-		(text "branch_en" (rect 177 123 219 135)(font "Arial" ))
-		(line (pt 240 128)(pt 224 128)(line_width 1))
+		(text "branch_en[1..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "branch_en[1..0]" (rect 158 123 219 135)(font "Arial" ))
+		(line (pt 240 128)(pt 224 128)(line_width 3))
 	)
 	(port
 		(pt 240 144)

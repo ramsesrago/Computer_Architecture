@@ -5,6 +5,20 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	double_op_tb
 
+} {} {}} C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module MSP430x2xx_block_diagram
+
+Top level modules:
+	MSP430x2xx_block_diagram
+
+} {} {}} C:/Computer_Architecture/Ramses/instruction_mem.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module instruction_mem
+
+Top level modules:
+	instruction_mem
+
 } {} {}} C:/Computer_Architecture/Ramses/ALU16bit.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/ALU16bit.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module ALU16bit
@@ -26,19 +40,19 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	MSP430x2xx
 
-} {} {}} C:/Computer_Architecture/Ramses/adder16bits_full.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adder16bits_full.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module adder16bits_full
-
-Top level modules:
-	adder16bits_full
-
 } {} {}} C:/Computer_Architecture/Ramses/mux16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mux16bits.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module mux_16_bits
 
 Top level modules:
 	mux_16_bits
+
+} {} {}} C:/Computer_Architecture/Ramses/adder16bits_full.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adder16bits_full.v
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module adder16bits_full
+
+Top level modules:
+	adder16bits_full
 
 } {} {}} C:/Computer_Architecture/Ramses/instruction_mem_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/instruction_mem_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
