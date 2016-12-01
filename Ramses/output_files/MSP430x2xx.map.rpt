@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MSP430x2xx
-Fri Nov 25 01:43:00 2016
+Thu Dec 01 00:14:42 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,23 +13,18 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. State Machine - |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Packed Into Inferred Megafunctions
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated
- 17. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
- 18. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
- 19. Parameter Settings for Inferred Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
+ 15. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -56,16 +51,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov 25 01:43:00 2016       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 01 00:14:42 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; MSP430x2xx                                  ;
 ; Top-level Entity Name           ; MSP430x2xx                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 325                                         ;
-; Total pins                      ; 118                                         ;
+; Total registers                 ; 4478                                        ;
+; Total pins                      ; 169                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 4,112                                       ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -175,34 +170,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                        ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                    ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                        ; Library ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------+---------+
-; ALU16bit.v                                          ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/ALU16bit.v                                          ;         ;
-; control_unit.v                                      ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/control_unit.v                                      ;         ;
-; bank_register.v                                     ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/bank_register.v                                     ;         ;
-; MSP430x2xx.v                                        ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/MSP430x2xx.v                                        ;         ;
-; MSP430x2xx_block_diagram.bdf                        ; yes             ; User Block Diagram/Schematic File                     ; C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.bdf                        ;         ;
-; instruction_mem.v                                   ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/instruction_mem.v                                   ;         ;
-; adder16bits.v                                       ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/adder16bits.v                                       ;         ;
-; adderpc.v                                           ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/adderpc.v                                           ;         ;
-; mult_by_2.v                                         ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/mult_by_2.v                                         ;         ;
-; mux16bits.v                                         ; yes             ; User Verilog HDL File                                 ; C:/Computer_Architecture/Ramses/mux16bits.v                                         ;         ;
-; imem.data                                           ; yes             ; Auto-Found Unspecified File                           ; C:/Computer_Architecture/Ramses/imem.data                                           ;         ;
-; altsyncram.tdf                                      ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
-; stratix_ram_block.inc                               ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
-; lpm_mux.inc                                         ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
-; lpm_decode.inc                                      ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
-; aglobal160.inc                                      ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                  ;         ;
-; a_rdenreg.inc                                       ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
-; altrom.inc                                          ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc                      ;         ;
-; altram.inc                                          ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc                      ;         ;
-; altdpram.inc                                        ; yes             ; Megafunction                                          ; c:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
-; db/altsyncram_48e1.tdf                              ; yes             ; Auto-Generated Megafunction                           ; C:/Computer_Architecture/Ramses/db/altsyncram_48e1.tdf                              ;         ;
-; db/msp430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Computer_Architecture/Ramses/db/msp430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif ;         ;
-+-----------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
+; ALU16bit.v                       ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/ALU16bit.v                   ;         ;
+; control_unit.v                   ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/control_unit.v               ;         ;
+; bank_register.v                  ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/bank_register.v              ;         ;
+; MSP430x2xx.v                     ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/MSP430x2xx.v                 ;         ;
+; MSP430x2xx_block_diagram.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.bdf ;         ;
+; instruction_mem.v                ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/instruction_mem.v            ;         ;
+; adder16bits.v                    ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/adder16bits.v                ;         ;
+; adderpc.v                        ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/adderpc.v                    ;         ;
+; mult_by_2.v                      ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/mult_by_2.v                  ;         ;
+; mux16bits.v                      ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/mux16bits.v                  ;         ;
+; adder16bits_full.v               ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/adder16bits_full.v           ;         ;
+; imem.data                        ; yes             ; Auto-Found Unspecified File        ; C:/Computer_Architecture/Ramses/imem.data                    ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -210,55 +195,50 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 306       ;
+; Estimate of Logic utilization (ALMs needed) ; 6770      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 408       ;
-;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 177       ;
-;     -- 5 input functions                    ; 54        ;
-;     -- 4 input functions                    ; 41        ;
-;     -- <=3 input functions                  ; 135       ;
+; Combinational ALUT usage for logic          ; 6368      ;
+;     -- 7 input functions                    ; 3         ;
+;     -- 6 input functions                    ; 5909      ;
+;     -- 5 input functions                    ; 111       ;
+;     -- 4 input functions                    ; 72        ;
+;     -- <=3 input functions                  ; 273       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 325       ;
+; Dedicated logic registers                   ; 4478      ;
 ;                                             ;           ;
-; I/O pins                                    ; 118       ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 4112      ;
+; I/O pins                                    ; 169       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 325       ;
-; Total fan-out                               ; 3165      ;
-; Average fan-out                             ; 3.21      ;
+; Maximum fan-out                             ; 4478      ;
+; Total fan-out                               ; 50763     ;
+; Average fan-out                             ; 4.54      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
-+----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name              ; Library Name ;
-+----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
-; |MSP430x2xx                                  ; 408 (0)           ; 325 (0)      ; 4112              ; 0          ; 118  ; 0            ; |MSP430x2xx                                                                                                                    ; MSP430x2xx_block_diagram ; work         ;
-;    |MSP430x2xx_block_diagram:MSP430x2xx|     ; 408 (0)           ; 325 (0)      ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx                                                                                ; MSP430x2xx_block_diagram ; work         ;
-;       |ALU16bit:inst|                        ; 153 (153)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst                                                                  ; ALU16bit                 ; work         ;
-;       |adderpc:inst5|                        ; 15 (15)           ; 16 (16)      ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5                                                                  ; adderpc                  ; work         ;
-;       |bank_register:inst2|                  ; 206 (206)         ; 304 (304)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2                                                            ; bank_register            ; work         ;
-;       |control_unit:inst3|                   ; 34 (34)           ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3                                                             ; control_unit             ; work         ;
-;       |instruction_mem:inst1|                ; 0 (0)             ; 0 (0)        ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1                                                          ; instruction_mem          ; work         ;
-;          |altsyncram:Inst_mem_rtl_0|         ; 0 (0)             ; 0 (0)        ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0                                ; altsyncram               ; work         ;
-;             |altsyncram_48e1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4112              ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated ; altsyncram_48e1          ; work         ;
-+----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+--------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name              ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
+; |MSP430x2xx                              ; 6368 (0)          ; 4478 (0)     ; 0                 ; 0          ; 169  ; 0            ; |MSP430x2xx                                                            ; MSP430x2xx_block_diagram ; work         ;
+;    |MSP430x2xx_block_diagram:MSP430x2xx| ; 6368 (0)          ; 4478 (0)     ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx                        ; MSP430x2xx_block_diagram ; work         ;
+;       |ALU16bit:inst|                    ; 170 (170)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst          ; ALU16bit                 ; work         ;
+;       |adder16bits:inst6|                ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits:inst6      ; adder16bits              ; work         ;
+;       |adder16bits_full:inst7|           ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst7 ; adder16bits_full         ; work         ;
+;       |adder16bits_full:inst9|           ; 16 (16)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst9 ; adder16bits_full         ; work         ;
+;       |adderpc:inst11|                   ; 14 (14)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst11         ; adderpc                  ; work         ;
+;       |adderpc:inst5|                    ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5          ; adderpc                  ; work         ;
+;       |bank_register:inst2|              ; 230 (230)         ; 304 (304)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2    ; bank_register            ; work         ;
+;       |control_unit:inst3|               ; 82 (82)           ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3     ; control_unit             ; work         ;
+;       |instruction_mem:inst1|            ; 5787 (5787)       ; 4160 (4160)  ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1  ; instruction_mem          ; work         ;
+;       |mult_by_2:inst4|                  ; 0 (0)             ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4        ; mult_by_2                ; work         ;
+;       |mux_16_bits:inst12|               ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst12     ; mux_16_bits              ; work         ;
+;       |mux_16_bits:inst13|               ; 6 (6)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst13     ; mux_16_bits              ; work         ;
+;       |mux_16_bits:inst8|                ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8      ; mux_16_bits              ; work         ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                     ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
-; Name                                                                                                                          ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                 ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
-; MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 257          ; 16           ; --           ; --           ; 4112 ; db/MSP430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif ;
-+-------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -280,57 +260,77 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
 ; Latch Name                                                                  ; Latch Enable Signal                                                  ; Free of Timing Hazards ;
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|C                         ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Z                         ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector0          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|N                         ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Decoder0           ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc               ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[2]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector0          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[3]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[9]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|branch_en[0]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|branch_en[1]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc               ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc        ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_en                ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_en         ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux3          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[0]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[1]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[2]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[3]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[4]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[5]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[6]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[7]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[8]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2              ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[0]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[1]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[2]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[3]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[0]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[1]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[4]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[5]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[6]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[7]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[4]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[15] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[11] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[0]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[1]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[2]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[3]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[3]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[2]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[1]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[0]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|WideOr1       ; yes                    ;
-; Number of user-specified and inferred latches = 50                          ;                                                                      ;                        ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[3]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[2]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[1]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[0]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_rom_en            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Decoder1      ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|addr_mode_sel[0]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Decoder1      ; yes                    ;
+; Number of user-specified and inferred latches = 70                          ;                                                                      ;                        ;
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -340,10 +340,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------+----------------------------------------+
 ; Register name                                                       ; Reason for Removal                     ;
 +---------------------------------------------------------------------+----------------------------------------+
-; MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4|out[0..9]       ; Stuck at GND due to stuck port data_in ;
+; MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4|out[0]          ; Stuck at GND due to stuck port data_in ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~4 ; Lost fanout                            ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~5 ; Lost fanout                            ;
-; Total Number of Removed Registers = 12                              ;                                        ;
+; Total Number of Removed Registers = 3                               ;                                        ;
 +---------------------------------------------------------------------+----------------------------------------+
 
 
@@ -352,12 +352,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 325   ;
+; Total registers                              ; 4478  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Synchronous Load   ; 64    ;
 ; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 256   ;
+; Number of registers using Clock Enable       ; 4368  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -367,68 +367,86 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------------------------+---------+
 ; Inverted Register                                                      ; Fan out ;
 +------------------------------------------------------------------------+---------+
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][1]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][0]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][0]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][0]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][0]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][1]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][1]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][1]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][1]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][1]   ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][1]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][2]   ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][2]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][2]   ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][2]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][2]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][2]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][2]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][2]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][3]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][3]   ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][3]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][4]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][3]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][3]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][4]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][4]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][4]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][4]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][4]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][5]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][5]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][5]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][5]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][5]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][5]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][6]   ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][6]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][7]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][7]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][8]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][6]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][6]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][7]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][7]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][8]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][8]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][9]   ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][8]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][8]  ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][9]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][9]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][10] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][11]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][11]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][11] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][11] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][12]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][9]  ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][10] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][11] ; 2       ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][12] ; 2       ;
-; Total number of inverted registers = 30                                ;         ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][13] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][14] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][15] ; 2       ;
+; Total number of inverted registers = 54                                ;         ;
 +------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                                                                                ;
-+---------------------------------------------------------------------------+--------------------------------------------------------------------------+------+
-; Register Name                                                             ; Megafunction                                                             ; Type ;
-+---------------------------------------------------------------------------+--------------------------------------------------------------------------+------+
-; MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_reg[0..15] ; MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_mem_rtl_0 ; RAM  ;
-+---------------------------------------------------------------------------+--------------------------------------------------------------------------+------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][4] ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[15]        ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[12]        ;
-; 9:1                ; 15 bits   ; 90 LEs        ; 75 LEs               ; 15 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux9               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0|altsyncram_48e1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                                          ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                           ;
-+---------------------------------+--------------------+------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
+; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_2_reg[0] ;
+; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_1_reg[0] ;
+; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_reg[0]   ;
+; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux60         ;
+; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux57         ;
+; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux54         ;
+; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux51         ;
+; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux48         ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10       ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux1             ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1             ;
+; 14:1               ; 15 bits   ; 135 LEs       ; 90 LEs               ; 45 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux11                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][0]    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[7]            ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[7]            ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8|result[2]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -470,121 +488,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0 ;
-+------------------------------------+-----------------------------------------------------+-------------------------------------------+
-; Parameter Name                     ; Value                                               ; Type                                      ;
-+------------------------------------+-----------------------------------------------------+-------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                                   ; Untyped                                   ;
-; AUTO_CARRY_CHAINS                  ; ON                                                  ; AUTO_CARRY                                ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                                 ; IGNORE_CARRY                              ;
-; AUTO_CASCADE_CHAINS                ; ON                                                  ; AUTO_CASCADE                              ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                                 ; IGNORE_CASCADE                            ;
-; WIDTH_BYTEENA                      ; 1                                                   ; Untyped                                   ;
-; OPERATION_MODE                     ; ROM                                                 ; Untyped                                   ;
-; WIDTH_A                            ; 16                                                  ; Untyped                                   ;
-; WIDTHAD_A                          ; 9                                                   ; Untyped                                   ;
-; NUMWORDS_A                         ; 257                                                 ; Untyped                                   ;
-; OUTDATA_REG_A                      ; UNREGISTERED                                        ; Untyped                                   ;
-; ADDRESS_ACLR_A                     ; NONE                                                ; Untyped                                   ;
-; OUTDATA_ACLR_A                     ; NONE                                                ; Untyped                                   ;
-; WRCONTROL_ACLR_A                   ; NONE                                                ; Untyped                                   ;
-; INDATA_ACLR_A                      ; NONE                                                ; Untyped                                   ;
-; BYTEENA_ACLR_A                     ; NONE                                                ; Untyped                                   ;
-; WIDTH_B                            ; 1                                                   ; Untyped                                   ;
-; WIDTHAD_B                          ; 1                                                   ; Untyped                                   ;
-; NUMWORDS_B                         ; 1                                                   ; Untyped                                   ;
-; INDATA_REG_B                       ; CLOCK1                                              ; Untyped                                   ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                              ; Untyped                                   ;
-; RDCONTROL_REG_B                    ; CLOCK1                                              ; Untyped                                   ;
-; ADDRESS_REG_B                      ; CLOCK1                                              ; Untyped                                   ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                        ; Untyped                                   ;
-; BYTEENA_REG_B                      ; CLOCK1                                              ; Untyped                                   ;
-; INDATA_ACLR_B                      ; NONE                                                ; Untyped                                   ;
-; WRCONTROL_ACLR_B                   ; NONE                                                ; Untyped                                   ;
-; ADDRESS_ACLR_B                     ; NONE                                                ; Untyped                                   ;
-; OUTDATA_ACLR_B                     ; NONE                                                ; Untyped                                   ;
-; RDCONTROL_ACLR_B                   ; NONE                                                ; Untyped                                   ;
-; BYTEENA_ACLR_B                     ; NONE                                                ; Untyped                                   ;
-; WIDTH_BYTEENA_A                    ; 1                                                   ; Untyped                                   ;
-; WIDTH_BYTEENA_B                    ; 1                                                   ; Untyped                                   ;
-; RAM_BLOCK_TYPE                     ; AUTO                                                ; Untyped                                   ;
-; BYTE_SIZE                          ; 8                                                   ; Untyped                                   ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                           ; Untyped                                   ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                ; Untyped                                   ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                ; Untyped                                   ;
-; INIT_FILE                          ; db/MSP430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif ; Untyped                                   ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                              ; Untyped                                   ;
-; MAXIMUM_DEPTH                      ; 0                                                   ; Untyped                                   ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                              ; Untyped                                   ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                              ; Untyped                                   ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                              ; Untyped                                   ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                              ; Untyped                                   ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                     ; Untyped                                   ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                     ; Untyped                                   ;
-; ENABLE_ECC                         ; FALSE                                               ; Untyped                                   ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                               ; Untyped                                   ;
-; WIDTH_ECCSTATUS                    ; 3                                                   ; Untyped                                   ;
-; DEVICE_FAMILY                      ; Cyclone V                                           ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_48e1                                     ; Untyped                                   ;
-+------------------------------------+-----------------------------------------------------+-------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                                                ;
-+-------------------------------------------+-------------------------------------------------------------------------------------+
-; Name                                      ; Value                                                                               ;
-+-------------------------------------------+-------------------------------------------------------------------------------------+
-; Number of entity instances                ; 1                                                                                   ;
-; Entity Instance                           ; MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0 ;
-;     -- OPERATION_MODE                     ; ROM                                                                                 ;
-;     -- WIDTH_A                            ; 16                                                                                  ;
-;     -- NUMWORDS_A                         ; 257                                                                                 ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                        ;
-;     -- WIDTH_B                            ; 1                                                                                   ;
-;     -- NUMWORDS_B                         ; 1                                                                                   ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                              ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                        ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                           ;
-+-------------------------------------------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 325                         ;
+; arriav_ff             ; 4478                        ;
 ;     CLR               ; 5                           ;
-;     ENA               ; 240                         ;
+;     ENA               ; 4352                        ;
 ;     ENA SLD           ; 16                          ;
-;     plain             ; 64                          ;
-; arriav_lcell_comb     ; 409                         ;
-;     arith             ; 47                          ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 17                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 1                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 344                         ;
+;     SLD               ; 48                          ;
+;     plain             ; 57                          ;
+; arriav_lcell_comb     ; 6369                        ;
+;     arith             ; 117                         ;
+;         1 data inputs ; 48                          ;
+;         2 data inputs ; 53                          ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 15                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 6232                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 33                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 47                          ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 53                          ;
-;         6 data inputs ; 177                         ;
+;         1 data inputs ; 56                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 91                          ;
+;         4 data inputs ; 71                          ;
+;         5 data inputs ; 96                          ;
+;         6 data inputs ; 5909                        ;
 ;     shared            ; 17                          ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 16                          ;
-; boundary_port         ; 118                         ;
-; stratixv_ram_block    ; 16                          ;
+; boundary_port         ; 169                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.50                        ;
-; Average LUT depth     ; 2.70                        ;
+; Max LUT depth         ; 7.50                        ;
+; Average LUT depth     ; 4.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -593,7 +530,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:24     ;
 +----------------+--------------+
 
 
@@ -603,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Nov 25 01:40:54 2016
+    Info: Processing started: Thu Dec 01 00:13:53 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSP430x2xx -c MSP430x2xx
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu16bit_tb.v
@@ -640,90 +577,142 @@ Info (12021): Found 1 design units, including 1 entities, in source file double_
     Info (12023): Found entity 1: double_op_tb File: C:/Computer_Architecture/Ramses/double_op_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file mux16bits.v
     Info (12023): Found entity 1: mux_16_bits File: C:/Computer_Architecture/Ramses/mux16bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder16bits_full.v
+    Info (12023): Found entity 1: adder16bits_full File: C:/Computer_Architecture/Ramses/adder16bits_full.v Line: 1
 Info (12127): Elaborating entity "MSP430x2xx" for the top level hierarchy
-Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 41
+Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 47
 Info (12128): Elaborating entity "control_unit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3"
-Warning (10036): Verilog HDL or VHDL warning at control_unit.v(33): object "_inst_doub_flags" assigned a value but never read File: C:/Computer_Architecture/Ramses/control_unit.v Line: 33
-Warning (10235): Verilog HDL Always Construct warning at control_unit.v(121): variable "instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "en_pc_2", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "wr_en", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "branch_en", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "pc_inc", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "pc_offset", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(102): inferring latch(es) for variable "_instruction_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (10270): Verilog HDL Case Statement warning at control_unit.v(179): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 179
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(176): inferring latch(es) for variable "op_code", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(176): inferring latch(es) for variable "wr_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(176): inferring latch(es) for variable "src_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (10240): Verilog HDL Always Construct warning at control_unit.v(176): inferring latch(es) for variable "dst_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "dst_reg[0]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "dst_reg[1]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "dst_reg[2]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "dst_reg[3]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "src_reg[0]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "src_reg[1]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "src_reg[2]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "src_reg[3]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "wr_reg[0]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "wr_reg[1]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "wr_reg[2]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "wr_reg[3]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "op_code[0]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "op_code[1]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "op_code[2]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "op_code[3]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "op_code[4]" at control_unit.v(176) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Info (10041): Inferred latch for "_instruction_reg[0]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[1]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[2]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[3]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[8]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[9]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[10]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[11]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[12]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[13]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[14]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "_instruction_reg[15]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[0]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[1]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[2]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[3]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[4]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[5]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[6]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[7]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[8]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_offset[9]" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "pc_inc" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "branch_en" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "wr_en" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Info (10041): Inferred latch for "en_pc_2" at control_unit.v(102) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(139): variable "instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 139
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(142): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 142
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(147): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 147
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(168): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 168
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(173): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 173
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(186): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 186
+Warning (10235): Verilog HDL Always Construct warning at control_unit.v(187): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 187
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(121): inferring latch(es) for variable "en_pc_2", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(121): inferring latch(es) for variable "wr_en", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(121): inferring latch(es) for variable "branch_en", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(121): inferring latch(es) for variable "pc_inc", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(121): inferring latch(es) for variable "_instruction_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (10230): Verilog HDL assignment warning at control_unit.v(231): truncated value with size 6 to match size of target (5) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 231
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(237): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 237
+Warning (10270): Verilog HDL Case Statement warning at control_unit.v(232): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/control_unit.v Line: 232
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "type_operaton", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "op_code", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "_inst_doub_flags", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "wr_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "src_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "dst_reg", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "wr_rom_en", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "addr_mode_sel", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (10240): Verilog HDL Always Construct warning at control_unit.v(227): inferring latch(es) for variable "pc_offset", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[4]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[5]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[6]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[7]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[8]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "pc_offset[9]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "addr_mode_sel[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "addr_mode_sel[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "wr_rom_en" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "dst_reg[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "dst_reg[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "dst_reg[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "dst_reg[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "src_reg[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "src_reg[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "src_reg[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "src_reg[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "wr_reg[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "wr_reg[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "wr_reg[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "wr_reg[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "op_code[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "op_code[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "op_code[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "op_code[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "op_code[4]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[0]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[1]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[2]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[3]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[4]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[5]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[6]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[7]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[8]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[9]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[10]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[11]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[12]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[13]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[14]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[15]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[16]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[17]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[18]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[19]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[20]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[21]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[22]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[23]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[24]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[25]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[26]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[27]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[28]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[29]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[30]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "type_operaton[31]" at control_unit.v(227) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (10041): Inferred latch for "_instruction_reg[0]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[1]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[2]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[3]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[4]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[5]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[6]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[7]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[8]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[9]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[10]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[11]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[12]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[13]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[14]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "_instruction_reg[15]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "pc_inc" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "branch_en[0]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "branch_en[1]" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "wr_en" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Info (10041): Inferred latch for "en_pc_2" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Info (12128): Elaborating entity "instruction_mem" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1"
-Warning (10850): Verilog HDL warning at instruction_mem.v(21): number of words (12) in memory file does not match the number of elements in the address range [0:256] File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 21
-Warning (10030): Net "Inst_mem.data_a" at instruction_mem.v(13) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 13
-Warning (10030): Net "Inst_mem.waddr_a" at instruction_mem.v(13) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 13
-Warning (10030): Net "Inst_mem.we_a" at instruction_mem.v(13) has no driver or initial value, using a default initial value '0' File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 13
+Warning (10850): Verilog HDL warning at instruction_mem.v(29): number of words (12) in memory file does not match the number of elements in the address range [0:256] File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 29
+Warning (10855): Verilog HDL warning at instruction_mem.v(28): initial value for variable Inst_mem should be constant File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 28
 Info (12128): Elaborating entity "bank_register" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2"
 Info (12128): Elaborating entity "mux_16_bits" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8"
 Info (12128): Elaborating entity "adderpc" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5"
 Info (12128): Elaborating entity "adder16bits" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adder16bits:inst6"
 Info (12128): Elaborating entity "mult_by_2" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4"
 Info (12128): Elaborating entity "ALU16bit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst"
-Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(31): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 31
-Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(33): variable "C" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(31): variable "flags" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(33): variable "flags" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 33
 Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(44): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 44
 Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(47): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 47
 Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(50): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 50
 Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(53): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 53
 Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(54): variable "result" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 54
+Warning (10235): Verilog HDL Always Construct warning at ALU16bit.v(69): variable "flags" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 69
+Warning (10230): Verilog HDL assignment warning at ALU16bit.v(72): truncated value with size 32 to match size of target (16) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 72
+Warning (10230): Verilog HDL assignment warning at ALU16bit.v(77): truncated value with size 32 to match size of target (16) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 77
 Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(22): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(22): inferring latch(es) for variable "N", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(22): inferring latch(es) for variable "Z", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(22): inferring latch(es) for variable "C", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Info (10041): Inferred latch for "C" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Info (10041): Inferred latch for "Z" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Info (10041): Inferred latch for "N" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+Warning (10240): Verilog HDL Always Construct warning at ALU16bit.v(22): inferring latch(es) for variable "flags", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+Info (10041): Inferred latch for "flags[1]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+Info (10041): Inferred latch for "flags[2]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+Info (10041): Inferred latch for "flags[3]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[0]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[1]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[2]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
@@ -740,104 +729,75 @@ Info (10041): Inferred latch for "result[12]" at ALU16bit.v(22) File: C:/Compute
 Info (10041): Inferred latch for "result[13]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[14]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[15]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_mem_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to ROM
-        Info (286033): Parameter WIDTH_A set to 16
-        Info (286033): Parameter WIDTHAD_A set to 9
-        Info (286033): Parameter NUMWORDS_A set to 257
-        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/MSP430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif
-Info (12130): Elaborated megafunction instantiation "MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0"
-Info (12133): Instantiated megafunction "MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|altsyncram:Inst_mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "ROM"
-    Info (12134): Parameter "WIDTH_A" = "16"
-    Info (12134): Parameter "WIDTHAD_A" = "9"
-    Info (12134): Parameter "NUMWORDS_A" = "257"
-    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/MSP430x2xx.ram0_instruction_mem_54ca09ea.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_48e1.tdf
-    Info (12023): Found entity 1: altsyncram_48e1 File: C:/Computer_Architecture/Ramses/db/altsyncram_48e1.tdf Line: 28
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[0]" merged with LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[0]" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Info (13026): Duplicate LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[1]" merged with LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[1]" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Info (13026): Duplicate LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[2]" merged with LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[2]" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Info (13026): Duplicate LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[3]" merged with LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[3]" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Info (13026): Duplicate LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2" merged with LATCH primitive "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc" File: C:/Computer_Architecture/Ramses/control_unit.v Line: 15
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|C has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Z has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|N has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+Info (12128): Elaborating entity "adder16bits_full" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst9"
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 176
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 102
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Flags[0]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 10
-    Warning (13410): Pin "Fsm[4]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 12
+    Warning (13410): Pin "PC_after_x2_out[0]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 24
+    Warning (13410): Pin "Flags[0]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 9
+    Warning (13410): Pin "Fsm[4]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Computer_Architecture/Ramses/output_files/MSP430x2xx.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "Load_en" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 6
-Info (21057): Implemented 788 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 115 output pins
-    Info (21061): Implemented 654 logic cells
-    Info (21064): Implemented 16 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
-    Info: Peak virtual memory: 914 megabytes
-    Info: Processing ended: Fri Nov 25 01:43:00 2016
-    Info: Elapsed time: 00:02:06
-    Info: Total CPU time (on all processors): 00:01:39
+Info (21057): Implemented 10879 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 167 output pins
+    Info (21061): Implemented 10710 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 1113 megabytes
+    Info: Processing ended: Thu Dec 01 00:14:42 2016
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:01:02
 
 
 +------------------------------------------+

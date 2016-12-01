@@ -3,7 +3,8 @@ module control_unit (
 				clk, rst, 
 				en_pc_2, src_reg, wr_reg,
 				dst_reg, wr_en, op_code, branch_en,
-				pc_inc, fsm_state, pc_offset,wr_rom_en
+				pc_inc, fsm_state, pc_offset,wr_rom_en,
+				addr_mode_sel
 );
 
 // Inputs 
@@ -25,6 +26,7 @@ output	[ 3: 0]	dst_reg; 			//Search reg in bank register
 output	[ 4: 0]	op_code;				//Alu selection Mux
 output	[ 4: 0]  fsm_state;			//Sharing fsm current state
 output	[ 9: 0] 	pc_offset;			//Offset to do the jump
+output	[ 1: 0]  addr_mode_sel;		//Selection for addressing mode mux
 
 //Registers
 reg		[ 3: 0]	_wr_reg;				//Register to write information inner
@@ -47,6 +49,8 @@ reg					wr_en;				//Tells Bank register when to write
 reg		[ 1: 0]	branch_en;			//Used for jump in Mux_2
 reg					pc_inc;				//Load new data on PC
 reg					wr_rom_en;			//Enabler to write specific address to memory
+reg		[ 1: 0]  addr_mode_sel;		//Selection for addressing mode mux
+
  
 
 //Parameters
@@ -62,7 +66,7 @@ type_operation = 1 << Jump operation
 type_operation = 2 << Doble operand operations
 type_operation = 3 << Needs to be added +4 to the PC << Indexed, addressing modes
 */
-real type_operaton = 2;
+integer  type_operaton = 2;
 
 
 /*
@@ -124,7 +128,6 @@ always @(_fsm_state)
 					wr_en 		= 1'b0;
 					branch_en	= 2'b00;
 					pc_inc		= 1'b0;
-					pc_offset	= 10'd0;
 				end
 			f1: 
 				begin
@@ -180,7 +183,8 @@ always @(_fsm_state)
 			f3: 
 				begin
 					fsm_state 	= 5'b00100;
-					if (type_operaton == 1) wr_en = 1'b0;	//In order to save value into the register
+					if ((type_operaton == 1)
+					 || (type_operaton == 3)) wr_en = 1'b0;	//In order to save value into the register
 					else wr_en = 1'b1;
 					pc_inc		= 1'b0;
 					/*if (type_operaton == 1)				//Jump operations
@@ -351,9 +355,21 @@ always @(_instruction_reg)
 					wr_reg				= _instruction_reg[ 3: 0];
 					src_reg				= _instruction_reg[11: 8];
 					dst_reg				= _instruction_reg[ 3: 0];
-					if (wr_reg == 4'h9) wr_rom_en = 1'b1;
-					else wr_rom_en = 1'b0;
-					
+					if (_inst_doub_flags == 4'h9) 
+						begin
+							wr_rom_en = 1'b1;
+							addr_mode_sel = 2'b00;
+						end
+					else if (_inst_doub_flags == 4'hE)
+						begin
+							wr_rom_en = 1'b1;
+							addr_mode_sel = 2'b01;
+						end
+					else 
+						begin
+							wr_rom_en = 1'b0;
+							addr_mode_sel = 2'b00;
+						end
 				end
 			4'h5: 
 				begin
