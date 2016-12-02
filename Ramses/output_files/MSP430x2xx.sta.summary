@@ -3,291 +3,291 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'Clk'
-Slack : -10.097
-TNS   : -37683.741
+Slack : -9.744
+TNS   : -37756.607
 
 Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -8.259
-TNS   : -130.133
+Slack : -8.565
+TNS   : -137.179
 
 Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : -5.148
-TNS   : -74.408
+Slack : -5.440
+TNS   : -74.287
 
 Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : -4.915
-TNS   : -96.503
-
-Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : -4.603
-TNS   : -42.809
+Slack : -4.555
+TNS   : -82.841
 
 Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : -4.079
-TNS   : -7.982
+Slack : -4.296
+TNS   : -8.446
+
+Type  : Slow 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -3.934
+TNS   : -53.563
 
 Type  : Slow 1100mV 85C Model Hold 'Clk'
-Slack : -2.521
-TNS   : -28.403
+Slack : -2.307
+TNS   : -16.002
 
 Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -0.021
-TNS   : -0.021
+Slack : -0.352
+TNS   : -0.525
 
-Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.209
-TNS   : 0.000
+Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -0.102
+TNS   : -0.165
 
 Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.307
-TNS   : 0.000
+Slack : -0.033
+TNS   : -0.042
 
 Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.450
+Slack : 0.422
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 1.009
+Slack : 1.438
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clk'
 Slack : -0.394
-TNS   : -2369.670
+TNS   : -2377.082
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -0.257
-TNS   : -0.553
+Slack : -0.349
+TNS   : -1.020
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.088
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
+Slack : -0.005
+TNS   : -0.005
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : 0.163
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.123
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.147
+Slack : 0.200
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.433
+Slack : 0.383
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'Clk'
-Slack : -9.939
-TNS   : -37058.074
+Slack : -9.594
+TNS   : -36497.306
 
 Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -8.397
-TNS   : -132.058
+Slack : -8.653
+TNS   : -139.060
 
 Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : -5.182
-TNS   : -75.436
+Slack : -5.468
+TNS   : -75.662
 
 Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : -4.726
-TNS   : -94.295
-
-Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : -4.405
-TNS   : -41.420
+Slack : -4.431
+TNS   : -81.008
 
 Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : -4.112
-TNS   : -8.065
+Slack : -4.274
+TNS   : -8.442
+
+Type  : Slow 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -3.820
+TNS   : -52.310
 
 Type  : Slow 1100mV 0C Model Hold 'Clk'
-Slack : -2.570
-TNS   : -29.500
+Slack : -2.372
+TNS   : -17.011
 
 Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -0.157
-TNS   : -0.157
+Slack : -0.381
+TNS   : -0.598
 
-Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.174
-TNS   : 0.000
+Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -0.195
+TNS   : -0.349
 
 Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.283
-TNS   : 0.000
+Slack : -0.135
+TNS   : -0.240
 
 Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.396
+Slack : 0.415
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.877
+Slack : 1.329
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clk'
 Slack : -0.394
-TNS   : -2515.385
+TNS   : -2527.328
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -0.265
-TNS   : -0.567
+Slack : -0.352
+TNS   : -1.052
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.098
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
+Slack : 0.028
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : 0.142
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.141
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.155
+Slack : 0.232
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.458
+Slack : 0.344
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'Clk'
-Slack : -5.922
-TNS   : -21468.273
+Slack : -5.842
+TNS   : -22331.854
 
 Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -4.488
-TNS   : -67.317
-
-Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : -3.081
-TNS   : -52.345
-
-Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : -2.924
-TNS   : -26.211
+Slack : -4.602
+TNS   : -72.054
 
 Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : -2.781
-TNS   : -37.145
+Slack : -2.912
+TNS   : -36.334
+
+Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
+Slack : -2.761
+TNS   : -43.291
+
+Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -2.158
+TNS   : -25.533
 
 Type  : Fast 1100mV 85C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : -1.815
-TNS   : -3.513
+Slack : -1.927
+TNS   : -3.821
 
 Type  : Fast 1100mV 85C Model Hold 'Clk'
-Slack : -1.429
-TNS   : -13.890
+Slack : -1.317
+TNS   : -6.722
 
 Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : 0.047
-TNS   : 0.000
+Slack : -0.185
+TNS   : -0.284
 
-Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.250
+Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -0.008
+TNS   : -0.008
+
+Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
+Slack : 0.036
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.283
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.297
+Slack : 0.235
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.926
+Slack : 1.060
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Clk'
-Slack : -0.098
-TNS   : -396.786
+Slack : -0.097
+TNS   : -395.631
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -0.009
-TNS   : -0.009
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.159
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.171
-TNS   : 0.000
+Slack : -0.033
+TNS   : -0.082
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.191
+Slack : 0.101
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : 0.200
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
+Slack : 0.260
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.466
+Slack : 0.451
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'Clk'
-Slack : -5.231
-TNS   : -18941.017
+Slack : -5.094
+TNS   : -19453.962
 
 Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : -4.093
-TNS   : -62.332
-
-Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : -2.664
-TNS   : -44.017
+Slack : -4.225
+TNS   : -66.630
 
 Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : -2.632
-TNS   : -35.714
+Slack : -2.749
+TNS   : -35.134
 
-Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : -2.515
-TNS   : -22.446
+Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
+Slack : -2.385
+TNS   : -35.986
 
 Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : -1.718
-TNS   : -3.341
+Slack : -1.813
+TNS   : -3.601
+
+Type  : Fast 1100mV 0C Model Setup 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -1.795
+TNS   : -20.570
 
 Type  : Fast 1100mV 0C Model Hold 'Clk'
-Slack : -1.437
-TNS   : -14.158
+Slack : -1.336
+TNS   : -7.254
 
 Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : 0.000
-TNS   : 0.000
+Slack : -0.184
+TNS   : -0.287
 
-Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.205
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.243
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : -0.022
+TNS   : -0.033
 
 Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.256
+Slack : -0.002
+TNS   : -0.002
+
+Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
+Slack : 0.218
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.851
+Slack : 1.001
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Clk'
 Slack : -0.095
-TNS   : -389.146
+TNS   : -387.648
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]'
-Slack : 0.042
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
-Slack : 0.220
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]'
-Slack : 0.228
+Slack : 0.025
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]'
-Slack : 0.244
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1'
+Slack : 0.311
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f3'
-Slack : 0.479
+Slack : 0.436
 TNS   : 0.000
 
 ------------------------------------------------------------

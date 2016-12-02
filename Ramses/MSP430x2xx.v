@@ -23,7 +23,7 @@ output			  PC_inc_out;
 output			  Wr_en_out;
 output	[15: 0] PC;
 output	[ 9: 0] PC_offset_out;
-output	[27: 0] Seven_seg;
+output	[41: 0] Seven_seg;
 // Signals
 // Registers
 // Behavior

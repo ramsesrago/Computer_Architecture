@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5) Path("C:/Computer_Architecture/Ramses/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCQ128) Child_OpMask(1 3));
+		Device PartName(5CSEMA5F31) Path("C:/Computer_Architecture/Ramses/output_files/") File("MSP430x2xx.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

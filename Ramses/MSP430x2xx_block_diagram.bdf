@@ -328,7 +328,7 @@ agreement for further details.
 	(output)
 	(rect 1880 248 2108 264)
 	(text "OUTPUT" (rect 1 0 50 11)(font "Arial" (font_size 6)))
-	(text "Seven_seg[27..0]" (rect 90 0 222 14)(font "Arial" ))
+	(text "Seven_seg[41..0]" (rect 90 0 222 14)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -1120,7 +1120,7 @@ agreement for further details.
 	(annotation_block (parameter)(rect 856 -56 1224 -8))
 )
 (symbol
-	(rect 1576 224 1808 304)
+	(rect 1576 216 1808 296)
 	(text "seven_seg" (rect 5 0 79 14)(font "Arial" ))
 	(text "inst15" (rect 8 64 57 78)(font "Arial" ))
 	(port
@@ -1133,8 +1133,8 @@ agreement for further details.
 	(port
 		(pt 232 32)
 		(output)
-		(text "data_output[27..0]" (rect 0 0 148 14)(font "Arial" ))
-		(text "data_output[27..0]" (rect 86 27 234 41)(font "Arial" ))
+		(text "data_output[41..0]" (rect 0 0 148 14)(font "Arial" ))
+		(text "data_output[41..0]" (rect 86 27 211 41)(font "Arial" ))
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(drawing
@@ -2006,23 +2006,33 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1576 256)
-	(pt 1504 256)
-	(bus)
-)
-(connector
-	(pt 1504 256)
-	(pt 1504 176)
-	(bus)
-)
-(connector
 	(pt 1504 176)
 	(pt 1488 176)
 	(bus)
 )
 (connector
-	(pt 1808 256)
+	(pt 1504 248)
+	(pt 1576 248)
+	(bus)
+)
+(connector
+	(pt 1504 176)
+	(pt 1504 248)
+	(bus)
+)
+(connector
+	(pt 1872 256)
+	(pt 1872 248)
+	(bus)
+)
+(connector
 	(pt 1880 256)
+	(pt 1872 256)
+	(bus)
+)
+(connector
+	(pt 1872 248)
+	(pt 1808 248)
 	(bus)
 )
 (junction (pt 408 136))

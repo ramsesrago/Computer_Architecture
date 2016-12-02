@@ -4,62 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Seven_seg[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[16]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[17]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[18]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[19]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[20]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[21]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[22]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[23]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[24]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[25]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[26]",
-					"strict" : false
-				},
-				{
-					"name" : "Seven_seg[27]",
-					"strict" : false
-				},
-				{
 					"name" : "Seven_seg[0]",
 					"strict" : false
 				},
@@ -113,6 +57,62 @@
 				},
 				{
 					"name" : "Seven_seg[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Seven_seg[27]",
 					"strict" : false
 				},
 				{

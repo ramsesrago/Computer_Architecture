@@ -31,6 +31,12 @@ begin
 		4'h7:	data_output_1 = 7'h38;
 		4'h8:	data_output_1 = 7'h00;
 		4'h9:	data_output_1 = 7'h18;
+		4'hA:	data_output_1 = 7'h08;
+		4'hB:	data_output_1 = 7'h03;
+		4'hC:	data_output_1 = 7'h46;
+		4'hD:	data_output_1 = 7'h21;
+		4'hE:	data_output_1 = 7'h06;
+		4'hF:	data_output_1 = 7'h0E;
 	endcase
 	case (data_input_2)
 		4'h0:	data_output_2 = 7'h40;
@@ -43,6 +49,12 @@ begin
 		4'h7:	data_output_2 = 7'h38;
 		4'h8:	data_output_2 = 7'h00;
 		4'h9:	data_output_2 = 7'h18;
+		4'hA:	data_output_2 = 7'h08;
+		4'hB:	data_output_2 = 7'h03;
+		4'hC:	data_output_2 = 7'h46;
+		4'hD:	data_output_2 = 7'h21;
+		4'hE:	data_output_2 = 7'h06;
+		4'hF:	data_output_2 = 7'h0E;
 	endcase
 	case (data_input_3)
 		4'h0:	data_output_3 = 7'h40;
@@ -55,6 +67,12 @@ begin
 		4'h7:	data_output_3 = 7'h38;
 		4'h8:	data_output_3 = 7'h00;
 		4'h9:	data_output_3 = 7'h18;
+		4'hA:	data_output_3 = 7'h08;
+		4'hB:	data_output_3 = 7'h03;
+		4'hC:	data_output_3 = 7'h46;
+		4'hD:	data_output_3 = 7'h21;
+		4'hE:	data_output_3 = 7'h06;
+		4'hF:	data_output_3 = 7'h0E;
 	endcase
 	case (data_input_4)
 		4'h0:	data_output_4 = 7'h40;
@@ -67,12 +85,18 @@ begin
 		4'h7:	data_output_4 = 7'h38;
 		4'h8:	data_output_4 = 7'h00;
 		4'h9:	data_output_4 = 7'h18;
+		4'hA:	data_output_4 = 7'h08;
+		4'hB:	data_output_4 = 7'h03;
+		4'hC:	data_output_4 = 7'h46;
+		4'hD:	data_output_4 = 7'h21;
+		4'hE:	data_output_4 = 7'h06;
+		4'hF:	data_output_4 = 7'h0E;
 	endcase
 	data_output [ 6: 0]	= data_output_1;
 	data_output [13: 7]	= data_output_2;
 	data_output [20:14]	= data_output_3;
 	data_output [27:21]	= data_output_4;
-	data_output [41:28]  = 14'h0;
+	data_output [41:28]  = 14'h4040;
 end
 
 endmodule
