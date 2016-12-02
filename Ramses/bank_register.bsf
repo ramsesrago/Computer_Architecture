@@ -88,6 +88,13 @@ agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
+		(pt 0 176)
+		(input)
+		(text "user_in[3..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "user_in[3..0]" (rect 21 171 70 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "a[15..0]" (rect 0 0 28 12)(font "Arial" ))
@@ -107,6 +114,13 @@ agreement for further details.
 		(text "pc_data_out[15..0]" (rect 0 0 73 12)(font "Arial" ))
 		(text "pc_data_out[15..0]" (rect 146 59 219 71)(font "Arial" ))
 		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(port
+		(pt 240 80)
+		(output)
+		(text "user_out[15..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "user_out[15..0]" (rect 160 75 219 87)(font "Arial" ))
+		(line (pt 240 80)(pt 224 80)(line_width 3))
 	)
 	(parameter
 		"pc"

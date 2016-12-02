@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MSP430x2xx
-Thu Dec 01 00:14:42 2016
+Thu Dec 01 18:30:53 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,18 +13,19 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state
+  8. State Machine - |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
- 15. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3
+ 16. Parameter Settings for User Entity Instance: MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,14 +52,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Dec 01 00:14:42 2016       ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec 01 18:30:53 2016       ;
 ; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                   ; MSP430x2xx                                  ;
-; Top-level Entity Name           ; MSP430x2xx                                  ;
+; Top-level Entity Name           ; MSP430x2xx_top                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4478                                        ;
-; Total pins                      ; 169                                         ;
+; Total registers                 ; 4487                                        ;
+; Total pins                      ; 48                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -77,7 +78,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; MSP430x2xx         ; MSP430x2xx         ;
+; Top-level entity name                                                           ; MSP430x2xx_top     ; MSP430x2xx         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -178,7 +179,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ALU16bit.v                       ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/ALU16bit.v                   ;         ;
 ; control_unit.v                   ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/control_unit.v               ;         ;
 ; bank_register.v                  ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/bank_register.v              ;         ;
-; MSP430x2xx.v                     ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/MSP430x2xx.v                 ;         ;
 ; MSP430x2xx_block_diagram.bdf     ; yes             ; User Block Diagram/Schematic File  ; C:/Computer_Architecture/Ramses/MSP430x2xx_block_diagram.bdf ;         ;
 ; instruction_mem.v                ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/instruction_mem.v            ;         ;
 ; adder16bits.v                    ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/adder16bits.v                ;         ;
@@ -186,6 +186,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; mult_by_2.v                      ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/mult_by_2.v                  ;         ;
 ; mux16bits.v                      ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/mux16bits.v                  ;         ;
 ; adder16bits_full.v               ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/adder16bits_full.v           ;         ;
+; seven_seg.v                      ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/seven_seg.v                  ;         ;
+; MSP430x2xx_top.v                 ; yes             ; User Verilog HDL File              ; C:/Computer_Architecture/Ramses/MSP430x2xx_top.v             ;         ;
 ; imem.data                        ; yes             ; Auto-Found Unspecified File        ; C:/Computer_Architecture/Ramses/imem.data                    ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------+---------+
 
@@ -195,64 +197,65 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 6770      ;
+; Estimate of Logic utilization (ALMs needed) ; 6274      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 6368      ;
+; Combinational ALUT usage for logic          ; 5895      ;
 ;     -- 7 input functions                    ; 3         ;
-;     -- 6 input functions                    ; 5909      ;
-;     -- 5 input functions                    ; 111       ;
-;     -- 4 input functions                    ; 72        ;
-;     -- <=3 input functions                  ; 273       ;
+;     -- 6 input functions                    ; 5391      ;
+;     -- 5 input functions                    ; 161       ;
+;     -- 4 input functions                    ; 66        ;
+;     -- <=3 input functions                  ; 274       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 4478      ;
+; Dedicated logic registers                   ; 4487      ;
 ;                                             ;           ;
-; I/O pins                                    ; 169       ;
+; I/O pins                                    ; 48        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 4478      ;
-; Total fan-out                               ; 50763     ;
+; Maximum fan-out                             ; 4487      ;
+; Total fan-out                               ; 47601     ;
 ; Average fan-out                             ; 4.54      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
-; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                    ; Entity Name              ; Library Name ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
-; |MSP430x2xx                              ; 6368 (0)          ; 4478 (0)     ; 0                 ; 0          ; 169  ; 0            ; |MSP430x2xx                                                            ; MSP430x2xx_block_diagram ; work         ;
-;    |MSP430x2xx_block_diagram:MSP430x2xx| ; 6368 (0)          ; 4478 (0)     ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx                        ; MSP430x2xx_block_diagram ; work         ;
-;       |ALU16bit:inst|                    ; 170 (170)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst          ; ALU16bit                 ; work         ;
-;       |adder16bits:inst6|                ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits:inst6      ; adder16bits              ; work         ;
-;       |adder16bits_full:inst7|           ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst7 ; adder16bits_full         ; work         ;
-;       |adder16bits_full:inst9|           ; 16 (16)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst9 ; adder16bits_full         ; work         ;
-;       |adderpc:inst11|                   ; 14 (14)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst11         ; adderpc                  ; work         ;
-;       |adderpc:inst5|                    ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5          ; adderpc                  ; work         ;
-;       |bank_register:inst2|              ; 230 (230)         ; 304 (304)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2    ; bank_register            ; work         ;
-;       |control_unit:inst3|               ; 82 (82)           ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3     ; control_unit             ; work         ;
-;       |instruction_mem:inst1|            ; 5787 (5787)       ; 4160 (4160)  ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1  ; instruction_mem          ; work         ;
-;       |mult_by_2:inst4|                  ; 0 (0)             ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4        ; mult_by_2                ; work         ;
-;       |mux_16_bits:inst12|               ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst12     ; mux_16_bits              ; work         ;
-;       |mux_16_bits:inst13|               ; 6 (6)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst13     ; mux_16_bits              ; work         ;
-;       |mux_16_bits:inst8|                ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8      ; mux_16_bits              ; work         ;
-+------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------------------------+--------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                       ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name              ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+--------------------------+--------------+
+; |MSP430x2xx_top                          ; 5895 (0)          ; 4487 (0)     ; 0                 ; 0          ; 48   ; 0            ; |MSP430x2xx_top                                                            ; MSP430x2xx_top           ; work         ;
+;    |MSP430x2xx_block_diagram:MSP430x2xx| ; 5895 (0)          ; 4487 (0)     ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx                        ; MSP430x2xx_block_diagram ; work         ;
+;       |ALU16bit:inst|                    ; 164 (164)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst          ; ALU16bit                 ; work         ;
+;       |adder16bits:inst6|                ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits:inst6      ; adder16bits              ; work         ;
+;       |adder16bits_full:inst7|           ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst7 ; adder16bits_full         ; work         ;
+;       |adder16bits_full:inst9|           ; 16 (16)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst9 ; adder16bits_full         ; work         ;
+;       |adderpc:inst11|                   ; 14 (14)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst11         ; adderpc                  ; work         ;
+;       |adderpc:inst5|                    ; 15 (15)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|adderpc:inst5          ; adderpc                  ; work         ;
+;       |bank_register:inst2|              ; 327 (327)         ; 320 (320)    ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2    ; bank_register            ; work         ;
+;       |control_unit:inst3|               ; 81 (81)           ; 5 (5)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3     ; control_unit             ; work         ;
+;       |instruction_mem:inst1|            ; 5207 (5207)       ; 4153 (4153)  ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1  ; instruction_mem          ; work         ;
+;       |mult_by_2:inst4|                  ; 0 (0)             ; 9 (9)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4        ; mult_by_2                ; work         ;
+;       |mux_16_bits:inst12|               ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst12     ; mux_16_bits              ; work         ;
+;       |mux_16_bits:inst13|               ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst13     ; mux_16_bits              ; work         ;
+;       |mux_16_bits:inst8|                ; 1 (1)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8      ; mux_16_bits              ; work         ;
+;       |seven_seg:inst15|                 ; 28 (28)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15       ; seven_seg                ; work         ;
++------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state ;
-+---------------+---------------+---------------+---------------+---------------+---------------+
-; Name          ; _fsm_state.f3 ; _fsm_state.f2 ; _fsm_state.f1 ; _fsm_state.f0 ; _fsm_state.f4 ;
-+---------------+---------------+---------------+---------------+---------------+---------------+
-; _fsm_state.f0 ; 0             ; 0             ; 0             ; 0             ; 0             ;
-; _fsm_state.f1 ; 0             ; 0             ; 1             ; 1             ; 0             ;
-; _fsm_state.f2 ; 0             ; 1             ; 0             ; 1             ; 0             ;
-; _fsm_state.f3 ; 1             ; 0             ; 0             ; 1             ; 0             ;
-; _fsm_state.f4 ; 0             ; 0             ; 0             ; 1             ; 1             ;
-+---------------+---------------+---------------+---------------+---------------+---------------+
++---------------------------------------------------------------------------------------------------+
+; State Machine - |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state ;
++---------------+---------------+---------------+---------------+---------------+-------------------+
+; Name          ; _fsm_state.f3 ; _fsm_state.f2 ; _fsm_state.f1 ; _fsm_state.f0 ; _fsm_state.f4     ;
++---------------+---------------+---------------+---------------+---------------+-------------------+
+; _fsm_state.f0 ; 0             ; 0             ; 0             ; 0             ; 0                 ;
+; _fsm_state.f1 ; 0             ; 0             ; 1             ; 1             ; 0                 ;
+; _fsm_state.f2 ; 0             ; 1             ; 0             ; 1             ; 0                 ;
+; _fsm_state.f3 ; 1             ; 0             ; 0             ; 1             ; 0                 ;
+; _fsm_state.f4 ; 0             ; 0             ; 0             ; 1             ; 1                 ;
++---------------+---------------+---------------+---------------+---------------+-------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -260,91 +263,127 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
 ; Latch Name                                                                  ; Latch Enable Signal                                                  ; Free of Timing Hazards ;
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[2]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector0          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[3]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[9]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[0]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|branch_en[0]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|branch_en[1]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|en_pc_2       ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc               ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc        ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_en                ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_en         ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[0]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[1]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[2]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[3]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[4]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[5]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[6]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[7]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[8]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[0]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[1]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[2]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[3]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[0]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[1]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[4]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[5]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[6]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[7]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[4]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[15] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[11] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc               ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_inc        ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[3]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[2]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[1]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_reg[0]            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[2]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[1]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[4]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[6]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[3]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[5]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[4]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[3]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[2]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[1]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[0]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|fsm_state[0]  ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[8]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8]                 ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset[7]         ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|pc_offset     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14]                ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux16              ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1]                  ; MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[0]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[1]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux5          ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[15] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[6]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[7]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[4]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[5]  ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|dst_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10    ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1]           ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector5     ; yes                    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[11] ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state.f1 ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|wr_rom_en            ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Decoder1      ; yes                    ;
 ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|addr_mode_sel[0]     ; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Decoder1      ; yes                    ;
-; Number of user-specified and inferred latches = 70                          ;                                                                      ;                        ;
+; Number of user-specified and inferred latches = 67                          ;                                                                      ;                        ;
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                           ;
-+---------------------------------------------------------------------+----------------------------------------+
-; Register name                                                       ; Reason for Removal                     ;
-+---------------------------------------------------------------------+----------------------------------------+
-; MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4|out[0]          ; Stuck at GND due to stuck port data_in ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~4 ; Lost fanout                            ;
-; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~5 ; Lost fanout                            ;
-; Total Number of Removed Registers = 3                               ;                                        ;
-+---------------------------------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                              ;
++----------------------------------------------------------------------+----+
+; Logic Cell Name                                                      ;    ;
++----------------------------------------------------------------------+----+
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[14] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[15] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[16] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[17] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[18] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[19] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[20] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[21] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[22] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[23] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[24] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[25] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[26] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[27] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[0]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[1]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[2]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[3]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[4]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[5]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[6]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[7]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[8]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[9]  ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[10] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[11] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[12] ;    ;
+; MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|data_output[13] ;    ;
+; Number of logic cells representing combinational loops               ; 28 ;
++----------------------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                   ;
++-----------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                               ; Reason for Removal                     ;
++-----------------------------------------------------------------------------+----------------------------------------+
+; MSP430x2xx_block_diagram:MSP430x2xx|mult_by_2:inst4|out[0]                  ; Stuck at GND due to stuck port data_in ;
+; MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_1_reg[9..15] ; Lost fanout                            ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~4         ; Lost fanout                            ;
+; MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_fsm_state~5         ; Lost fanout                            ;
+; Total Number of Removed Registers = 10                                      ;                                        ;
++-----------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -352,9 +391,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4478  ;
+; Total registers                              ; 4487  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Synchronous Load   ; 42    ;
 ; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 4368  ;
@@ -367,86 +406,92 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------------------------+---------+
 ; Inverted Register                                                      ; Fan out ;
 +------------------------------------------------------------------------+---------+
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][0]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][0]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][0]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][0]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][1]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][1]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][1]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][1]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][1]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][1]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][2]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][2]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][2]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][2]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][2]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][2]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][2]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][3]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][3]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][3]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][3]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][3]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][4]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][4]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][4]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][4]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][4]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][5]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][5]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][5]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][5]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][5]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][6]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][6]   ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][6]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][6]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][7]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][7]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][8]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][8]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][8]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][9]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][9]  ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][10] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][11] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][12] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][13] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][14] ; 2       ;
-; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][15] ; 2       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][8]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][8]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][8]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][10] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][9]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][9]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][11] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][12] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][14] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][13] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][15] ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][0]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][0]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][0]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][0]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][2]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][2]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][2]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][2]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][2]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][2]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][2]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][1]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][1]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][1]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][1]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][1]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][1]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][3]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[5][3]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][3]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][3]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][3]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[4][4]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][4]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][4]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][4]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][4]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][6]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][6]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][6]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][6]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[6][5]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[7][5]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[8][5]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[9][5]   ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[10][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[12][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[13][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[14][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][5]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[11][7]  ; 3       ;
+; MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[15][7]  ; 3       ;
 ; Total number of inverted registers = 54                                ;         ;
 +------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
-; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_2_reg[0] ;
-; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_1_reg[0] ;
-; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_reg[0]   ;
-; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux60         ;
-; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux57         ;
-; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux54         ;
-; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux51         ;
-; 257:1              ; 3 bits    ; 513 LEs       ; 513 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux48         ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector10       ;
-; 15:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux1             ;
-; 32:1               ; 3 bits    ; 63 LEs        ; 24 LEs               ; 39 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Selector1             ;
-; 14:1               ; 15 bits   ; 135 LEs       ; 90 LEs               ; 45 LEs                 ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux11                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][0]    ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[7]            ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[7]            ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |MSP430x2xx|MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8|result[2]         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
+; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_2_reg[0] ;
+; 257:1              ; 16 bits   ; 2736 LEs      ; 2720 LEs             ; 16 LEs                 ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_reg[0]   ;
+; 257:1              ; 9 bits    ; 1539 LEs      ; 1530 LEs             ; 9 LEs                  ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Inst_1_reg[0] ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux60         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux58         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux56         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux54         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux52         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux50         ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux48         ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 42 LEs               ; 18 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|Mux20              ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 42 LEs               ; 18 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|Mux27              ;
+; 257:1              ; 2 bits    ; 342 LEs       ; 342 LEs              ; 0 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1|Mux62         ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Selector0        ;
+; 15:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|Mux3             ;
+; 14:1               ; 15 bits   ; 135 LEs       ; 90 LEs               ; 45 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|Mux2                  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|user_out[12]    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|b[12]           ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|a[14]           ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2|regmem[0][9]    ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 42 LEs               ; 18 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|Mux4               ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 42 LEs               ; 18 LEs                 ; No         ; |MSP430x2xx_top|MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15|Mux11              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -493,13 +538,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4478                        ;
+; arriav_ff             ; 4487                        ;
 ;     CLR               ; 5                           ;
-;     ENA               ; 4352                        ;
-;     ENA SLD           ; 16                          ;
-;     SLD               ; 48                          ;
-;     plain             ; 57                          ;
-; arriav_lcell_comb     ; 6369                        ;
+;     ENA               ; 4367                        ;
+;     ENA SLD           ; 1                           ;
+;     SLD               ; 41                          ;
+;     plain             ; 73                          ;
+; arriav_lcell_comb     ; 5896                        ;
 ;     arith             ; 117                         ;
 ;         1 data inputs ; 48                          ;
 ;         2 data inputs ; 53                          ;
@@ -507,21 +552,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 15                          ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 6232                        ;
+;     normal            ; 5759                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 56                          ;
 ;         2 data inputs ; 8                           ;
-;         3 data inputs ; 91                          ;
-;         4 data inputs ; 71                          ;
-;         5 data inputs ; 96                          ;
-;         6 data inputs ; 5909                        ;
+;         3 data inputs ; 92                          ;
+;         4 data inputs ; 65                          ;
+;         5 data inputs ; 146                         ;
+;         6 data inputs ; 5391                        ;
 ;     shared            ; 17                          ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 16                          ;
-; boundary_port         ; 169                         ;
+; boundary_port         ; 48                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.50                        ;
-; Average LUT depth     ; 4.78                        ;
+; Average LUT depth     ; 4.68                        ;
 +-----------------------+-----------------------------+
 
 
@@ -530,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:24     ;
+; Top            ; 00:00:20     ;
 +----------------+--------------+
 
 
@@ -540,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Dec 01 00:13:53 2016
+    Info: Processing started: Thu Dec 01 18:30:14 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MSP430x2xx -c MSP430x2xx
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file alu16bit_tb.v
@@ -579,8 +624,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux16bi
     Info (12023): Found entity 1: mux_16_bits File: C:/Computer_Architecture/Ramses/mux16bits.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file adder16bits_full.v
     Info (12023): Found entity 1: adder16bits_full File: C:/Computer_Architecture/Ramses/adder16bits_full.v Line: 1
-Info (12127): Elaborating entity "MSP430x2xx" for the top level hierarchy
-Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file seven_seg.v
+    Info (12023): Found entity 1: seven_seg File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file msp430x2xx_top.v
+    Info (12023): Found entity 1: MSP430x2xx_top File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 1
+Info (12127): Elaborating entity "MSP430x2xx_top" for the top level hierarchy
+Info (12128): Elaborating entity "MSP430x2xx_block_diagram" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx" File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 18
 Info (12128): Elaborating entity "control_unit" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3"
 Warning (10235): Verilog HDL Always Construct warning at control_unit.v(139): variable "instruction" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 139
 Warning (10235): Verilog HDL Always Construct warning at control_unit.v(142): variable "type_operaton" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Computer_Architecture/Ramses/control_unit.v Line: 142
@@ -690,7 +739,7 @@ Info (10041): Inferred latch for "branch_en[1]" at control_unit.v(121) File: C:/
 Info (10041): Inferred latch for "wr_en" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Info (10041): Inferred latch for "en_pc_2" at control_unit.v(121) File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Info (12128): Elaborating entity "instruction_mem" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|instruction_mem:inst1"
-Warning (10850): Verilog HDL warning at instruction_mem.v(29): number of words (12) in memory file does not match the number of elements in the address range [0:256] File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 29
+Warning (10850): Verilog HDL warning at instruction_mem.v(29): number of words (14) in memory file does not match the number of elements in the address range [0:256] File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 29
 Warning (10855): Verilog HDL warning at instruction_mem.v(28): initial value for variable Inst_mem should be constant File: C:/Computer_Architecture/Ramses/instruction_mem.v Line: 28
 Info (12128): Elaborating entity "bank_register" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|bank_register:inst2"
 Info (12128): Elaborating entity "mux_16_bits" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|mux_16_bits:inst8"
@@ -730,74 +779,101 @@ Info (10041): Inferred latch for "result[13]" at ALU16bit.v(22) File: C:/Compute
 Info (10041): Inferred latch for "result[14]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (10041): Inferred latch for "result[15]" at ALU16bit.v(22) File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
 Info (12128): Elaborating entity "adder16bits_full" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|adder16bits_full:inst9"
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Info (12128): Elaborating entity "seven_seg" for hierarchy "MSP430x2xx_block_diagram:MSP430x2xx|seven_seg:inst15"
+Warning (10270): Verilog HDL Case Statement warning at seven_seg.v(23): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 23
+Warning (10270): Verilog HDL Case Statement warning at seven_seg.v(35): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 35
+Warning (10270): Verilog HDL Case Statement warning at seven_seg.v(47): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 47
+Warning (10270): Verilog HDL Case Statement warning at seven_seg.v(59): incomplete case statement has no default case item File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 59
+Warning (10240): Verilog HDL Always Construct warning at seven_seg.v(17): inferring latch(es) for variable "data_output_1", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at seven_seg.v(17): inferring latch(es) for variable "data_output_2", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at seven_seg.v(17): inferring latch(es) for variable "data_output_3", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at seven_seg.v(17): inferring latch(es) for variable "data_output_4", which holds its previous value in one or more paths through the always construct File: C:/Computer_Architecture/Ramses/seven_seg.v Line: 17
+Warning (12030): Port "Seven_seg" on the entity instantiation of "MSP430x2xx" is connected to a signal of width 42. The formal width of the signal in the module is 28.  The extra bits will be left dangling without any fan-out logic. File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 18
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[5] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[7] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[4] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[6] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[9] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[11] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[8] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[10] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[13] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[15] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[12] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|result[14] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|type_operaton[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[10]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
-Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[8]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|src_reg[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[9]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
 Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
     Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[13]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[0] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[12]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[4] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[2] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] has unsafe behavior File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|_instruction_reg[14]~synth File: C:/Computer_Architecture/Ramses/control_unit.v Line: 121
+Warning (13012): Latch MSP430x2xx_block_diagram:MSP430x2xx|ALU16bit:inst|flags[1] has unsafe behavior File: C:/Computer_Architecture/Ramses/ALU16bit.v Line: 22
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal MSP430x2xx_block_diagram:MSP430x2xx|control_unit:inst3|op_code[3] File: C:/Computer_Architecture/Ramses/control_unit.v Line: 227
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "PC_after_x2_out[0]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 24
-    Warning (13410): Pin "Flags[0]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 9
-    Warning (13410): Pin "Fsm[4]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx.v Line: 11
+    Warning (13410): Pin "Seven_seg[28]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[29]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[30]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[31]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[32]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[33]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[34]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[35]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[36]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[37]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[38]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[39]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[40]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
+    Warning (13410): Pin "Seven_seg[41]" is stuck at GND File: C:/Computer_Architecture/Ramses/MSP430x2xx_top.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Computer_Architecture/Ramses/output_files/MSP430x2xx.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 10879 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 167 output pins
-    Info (21061): Implemented 10710 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 93 warnings
-    Info: Peak virtual memory: 1113 megabytes
-    Info: Processing ended: Thu Dec 01 00:14:42 2016
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:02
+Info (21057): Implemented 10269 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 10221 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 119 warnings
+    Info: Peak virtual memory: 977 megabytes
+    Info: Processing ended: Thu Dec 01 18:30:53 2016
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:59
 
 
 +------------------------------------------+

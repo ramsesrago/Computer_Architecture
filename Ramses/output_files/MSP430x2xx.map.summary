@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Dec 01 00:14:42 2016
+Analysis & Synthesis Status : Successful - Thu Dec 01 18:30:53 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : MSP430x2xx
-Top-level Entity Name : MSP430x2xx
+Top-level Entity Name : MSP430x2xx_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 4478
-Total pins : 169
+Total registers : 4487
+Total pins : 48
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

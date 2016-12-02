@@ -1,10 +1,12 @@
 module MSP430x2xx(Clk, Rst, Flags, Res, Fsm, Instr, Instr_1,Instr_2,
 						PC_data_in_out, A_data_out, B_data_out, Src_reg_out, Dst_reg_out,
-						PC_inc_out, Wr_en_out, PC, PC_offset_out, PC_after_x2_out);
+						PC_inc_out, Wr_en_out, PC, PC_offset_out, 
+						User_input, Seven_seg);
 
 // Inputs
-input 	Clk;
-input		Rst;
+input 				Clk;
+input					Rst;
+input 	[ 3: 0]	User_input;
 // Outputs
 output   [ 3: 0] Flags;
 output	[15: 0] Res;
@@ -21,7 +23,7 @@ output			  PC_inc_out;
 output			  Wr_en_out;
 output	[15: 0] PC;
 output	[ 9: 0] PC_offset_out;
-output	[ 9: 0] PC_after_x2_out;
+output	[27: 0] Seven_seg;
 // Signals
 // Registers
 // Behavior
@@ -44,6 +46,7 @@ MSP430x2xx_block_diagram MSP430x2xx (
 .Wr_en_out		(Wr_en_out),
 .PC				(PC),
 .PC_offset_out	(PC_offset_out),
-.PC_after_x2_out(PC_after_x2_out));
+.User_input		(User_input),
+.Seven_seg		(Seven_seg));
 
 endmodule

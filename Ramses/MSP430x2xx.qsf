@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY MSP430x2xx
+set_global_assignment -name TOP_LEVEL_ENTITY MSP430x2xx_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:37:05  OCTOBER 06, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
@@ -50,9 +50,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VERILOG_FILE ALU16bit_tb.v
@@ -74,4 +71,58 @@ set_global_assignment -name VERILOG_FILE mult_by_2_tb.v
 set_global_assignment -name VERILOG_FILE double_op_tb.v
 set_global_assignment -name VERILOG_FILE mux16bits.v
 set_global_assignment -name VERILOG_FILE adder16bits_full.v
+set_global_assignment -name VERILOG_FILE seven_seg.v
+set_location_assignment PIN_AE26 -to Seven_seg[0]
+set_location_assignment PIN_AE27 -to Seven_seg[1]
+set_location_assignment PIN_AE28 -to Seven_seg[2]
+set_location_assignment PIN_AG27 -to Seven_seg[3]
+set_location_assignment PIN_AF28 -to Seven_seg[4]
+set_location_assignment PIN_AG28 -to Seven_seg[5]
+set_location_assignment PIN_AH28 -to Seven_seg[6]
+set_location_assignment PIN_AJ29 -to Seven_seg[7]
+set_location_assignment PIN_AH29 -to Seven_seg[8]
+set_location_assignment PIN_AH30 -to Seven_seg[9]
+set_location_assignment PIN_AG30 -to Seven_seg[10]
+set_location_assignment PIN_AF29 -to Seven_seg[11]
+set_location_assignment PIN_AF30 -to Seven_seg[12]
+set_location_assignment PIN_AD27 -to Seven_seg[13]
+set_location_assignment PIN_AB23 -to Seven_seg[14]
+set_location_assignment PIN_AE29 -to Seven_seg[15]
+set_location_assignment PIN_AD29 -to Seven_seg[16]
+set_location_assignment PIN_AC28 -to Seven_seg[17]
+set_location_assignment PIN_AD30 -to Seven_seg[18]
+set_location_assignment PIN_AC29 -to Seven_seg[19]
+set_location_assignment PIN_AC30 -to Seven_seg[20]
+set_location_assignment PIN_AD26 -to Seven_seg[21]
+set_location_assignment PIN_AC27 -to Seven_seg[22]
+set_location_assignment PIN_AD25 -to Seven_seg[23]
+set_location_assignment PIN_AC25 -to Seven_seg[24]
+set_location_assignment PIN_AB28 -to Seven_seg[25]
+set_location_assignment PIN_AB25 -to Seven_seg[26]
+set_location_assignment PIN_AB22 -to Seven_seg[27]
+set_location_assignment PIN_AB12 -to User_input[0]
+set_location_assignment PIN_AC12 -to User_input[1]
+set_location_assignment PIN_AF9 -to User_input[2]
+set_location_assignment PIN_AF10 -to User_input[3]
+set_location_assignment PIN_AA14 -to Rst
+set_location_assignment PIN_AF14 -to Clk
+set_global_assignment -name VERILOG_FILE MSP430x2xx_top.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_location_assignment PIN_AA26 -to Seven_seg[40]
+set_location_assignment PIN_AA25 -to Seven_seg[41]
+set_location_assignment PIN_AB26 -to Seven_seg[39]
+set_location_assignment PIN_AB27 -to Seven_seg[38]
+set_location_assignment PIN_Y27 -to Seven_seg[37]
+set_location_assignment PIN_AA28 -to Seven_seg[36]
+set_location_assignment PIN_V25 -to Seven_seg[35]
+set_location_assignment PIN_W25 -to Seven_seg[34]
+set_location_assignment PIN_V23 -to Seven_seg[33]
+set_location_assignment PIN_W24 -to Seven_seg[32]
+set_location_assignment PIN_W22 -to Seven_seg[31]
+set_location_assignment PIN_Y24 -to Seven_seg[30]
+set_location_assignment PIN_Y23 -to Seven_seg[29]
+set_location_assignment PIN_AA24 -to Seven_seg[28]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

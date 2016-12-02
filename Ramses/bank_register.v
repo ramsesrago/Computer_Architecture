@@ -1,7 +1,7 @@
 module bank_register (
 				src_reg, dst_reg, clk, 
 				wr_reg, wr_data, wr_en, a, b,
-				pc_data_out, pc_inc, pc_data_in, rst
+				pc_data_out, pc_inc, pc_data_in, rst, user_in, user_out
 );
 
 // Inputs 
@@ -14,11 +14,13 @@ input 				wr_en;		//Signal to write result on register
 input 				clk;			//System clock
 input					pc_inc;		//Signal from control_unit.v to update pc
 input 				rst;			//Signal to reset all registers
+input 	[ 3: 0]  user_in;		//user push buttons
 
 // Outputs
 output	reg [15: 0] a;
 output 	reg [15: 0]	b;
 output	reg [15: 0]	pc_data_out;		//To program counter
+output 	reg [15: 0] user_out;
 
 // Registers
 reg 		[15: 0]	regmem	[ 0: 15];	//Memory registers
@@ -64,11 +66,13 @@ begin
 	regmem[r15] <= 16'b1111111111111100;
 end
 
+
 always @(posedge clk)
 begin
 	a = regmem [src_reg];		//Always output a to ALU w/src_reg
 	b = regmem [dst_reg];		//Always output b to ALU w/dst_reg
 	pc_data_out = regmem [pc];	//Always output pc to pc + 2 operation
+	user_out = regmem [user_in];
 	/*if (rst)
 		begin
 			for (i=4'd0; i<4'd15; i=i+1) 

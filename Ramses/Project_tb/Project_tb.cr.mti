@@ -33,13 +33,6 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	mux16bit
 
-} {} {}} C:/Computer_Architecture/Ramses/MSP430x2xx.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/MSP430x2xx.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module MSP430x2xx
-
-Top level modules:
-	MSP430x2xx
-
 } {} {}} C:/Computer_Architecture/Ramses/mux16bits.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/mux16bits.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module mux_16_bits
@@ -83,13 +76,6 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 
 Top level modules:
 	ALU16bit_tb
-
-} {} {}} C:/Computer_Architecture/Ramses/bank_register.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/bank_register.v
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module bank_register
-
-Top level modules:
-	bank_register
 
 } {} {}} C:/Computer_Architecture/Ramses/adderpc_tb.v {1 {vlog -work work -stats=none C:/Computer_Architecture/Ramses/adderpc_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
